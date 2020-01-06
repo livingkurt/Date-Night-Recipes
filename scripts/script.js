@@ -1,4 +1,6 @@
-// // var client_ID = "6faa4506df6e4d3ab6c894bfa461fdb4";
+var client_ID = "6faa4506df6e4d3ab6c894bfa461fdb4";
+
+console.log(client_ID)
 // // var client_Secret = "43e0f49befb44083bb8549c5b5c204ac";
 
 // // var search = "Reggee";
