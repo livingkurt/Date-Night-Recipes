@@ -18,7 +18,12 @@ So that I can prepare them for date night
 
 ## Wireframe
 
-
+Home - Meal Search
+![Date Night Recipes](images/wf_1.png)
+Next Page - Cocktail Search
+![Date Night Recipes](images/wf_2.png)
+Next Page - Results
+![Date Night Recipes](images/wf_3.png)
 
 ## User Flow
 
@@ -31,6 +36,9 @@ They are asked to search for a specific cocktail, type of alcohol in cocktail, s
 
 #### Page 3 
 The user will now be shown a meal recipe and a cocktail recipe based on the user search
+
+#### Other Functionality
+The user will also be able to save recipes that they like as well
 
 ## APIS To Be Used
 
