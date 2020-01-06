@@ -13,7 +13,7 @@ I want to Find good recipes
 So that I can cook for date night
 
 As a Undecisive Date Planner
-I want to Find good cocktail recipes  
+I want to Find good cocktail recipes
 So that I can prepare them for date night
 
 ## Wireframe
@@ -50,9 +50,25 @@ https://www.themealdb.com/api.php
 
 ## Rough Breakdown
 
+![Date Night Recipes](images/rb_1.png)
 
-
-
+Create Food/Cocktails search functionality using API’s
+    Search Criteria 
+Food
+ Meal, main ingredient or meal category 
+Drinks 
+Main alcohol, types of drinks or specific ingredients ( Like juices) 
+API’s
+The Cocktail DB 
+The Meal DB
+Get callbacks from API’s
+API’s
+The Cocktail DB 
+The Meal DB
+Get users past searches store it in local storage
+Create Readme
+Create Wireframe
+Create initial Files
 
 
 
