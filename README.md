@@ -25,6 +25,8 @@ Next Page - Cocktail Search
 Next Page - Results
 ![Date Night Recipes](images/wf_3.png)
 
+https://drive.google.com/open?id=1lSDWp1VaelG2rcyt42gGeA8JQBhEXlcA
+
 ## User Flow
 
 The user opens up webpage
@@ -69,6 +71,11 @@ Get users past searches store it in local storage
 Create Readme
 Create Wireframe
 Create initial Files
+
+#### Project Notes
+
+https://docs.google.com/document/d/1uViAwHs_ojYeDN75t0cV6x8c30uuTZoWx_-HifuxTJE/edit
+
 
 
 
