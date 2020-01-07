@@ -12,8 +12,11 @@
 </head>
 
 <body>
-    <!-- Webpage container  -->
-    <div>
+     <!-- Webpage container  -->
+     <div class="uk-container">
+         <!-- This is what needs to be added to class of above container to get wallpaper. However I cant figure out how to get it to take up the whole page. Image does not matter just trying to get HTML right
+            uk-background-contain " style="background-image: url(images/wine-wallpaper.jpg);"> -->
+            
         <!-- nav container -->
         <header>
             <nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
@@ -55,16 +58,36 @@
                     <h3 class="uk-text-center">Search For The Perfect Date</h3>
                 </row>
                 <row>
-                    <form class="uk-search uk-search-default uk-align-center uk-width-responsive">
-                        <span uk-search-icon></span>
-                        <input class="uk-search-input" type="search"
-                            placeholder="Search by name, ingredients or category">
-                    </form>
+                        <form class="uk-search uk-search-default uk-align-center uk-child-width-responsive">
+                                <span uk-search-icon></span>
+                                <input class="uk-search-input uk-text-center" type="search" placeholder="Search">
+                        </form>
                 </row>
 
             </row>
-            <!-- row 3 Most recent Searches  -->
-            <row></row>
+               <!-- Spacing Divider -->
+               <div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+        <!-- row 3 Most recent Searches  -->
+            <row>
+                    <row>
+                            <h5 class="uk-text-center">Search For The Perfect Date</h5>
+                    </row>
+                    <!-- recent searches carossel section -->
+                    <row>
+                            <row>
+                                    <h6 class="uk-text-center">Most Recent Searches</h6>
+                            </row>
+                            <!-- recent searches carossel -->
+                            <row>
+                                
+                            </row>
+                    </row>
+            </row>
 
         </div>
         <footer>
