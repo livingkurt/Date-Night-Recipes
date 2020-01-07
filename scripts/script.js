@@ -9,7 +9,7 @@ var search_i_d_e = $("#search_i_d");
 var search_f_d_e = $("#search_f_d");
 var ready_b_e = $("#ready_b");
 var meal_results_c_e = $("#meal_results_c");
-
+var drink_results_c_e = $("#drink_results_c");
 
 
 // var type = ["filter", "random", "categories"]
@@ -62,32 +62,22 @@ ready_b_e.on("click", function(event){
 
 
 function category_m_api_call(meal_search) {
-    
+    meal_results_c_e.empty();
     var meal_category_query_url = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
     $.ajax({url: meal_category_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.meals.length;
-        // var array_len = Object.keys(array_len).length;
         var meal_cat_array = [];
         for (var i = 0; i < array_len; i++){
-            // console.log(response.meals[i].strCategory)
             var meal_cat = response.meals[i].strCategory
             meal_cat_array.push(meal_cat.toLowerCase())
         }
         var meal_categories = meal_cat_array;
-        // console.log(meal_categories)
-        // meal_search_api_call();
-        // var a = meal_categories.indexOf(meal_search);
-        // console.log(a)
         if (meal_categories.indexOf(meal_search) === "-1" || meal_categories.indexOf(meal_search) === -1) {
             meal_search_api_call(meal_search);
-            // console.log("goodbye")
         }
         else {
-        // else if (meal_categories.indexOf(drink_search) != "-1" || meal_categories.indexOf(drink_search) != -1){
-        
             meal_filter_api_call(meal_search);
-            // console.log("hello")
         }
         
 
@@ -95,32 +85,21 @@ function category_m_api_call(meal_search) {
 }
 
 function meal_search_api_call(meal_search) {
-    // var meal_search = meal_search
-    // console.log(meal_search)
     var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
     $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.meals.length;
         var meal_name = response.meals[0].strMeal;
-        // var array_len = Object.keys(array_len).length;
         for (var i = 0; i < array_len; i++){
-            // console.log(response.meals[i])
             var meal_name = response.meals[i].strMeal;
             meal_search_results(meal_name);
         }
-
-
-        // meal_filter_api_call(meal_search);
-        
     })  
-   
-    // change_to_drink_page();
-    // meal_search_results(array_len);
 }
 
 function meal_filter_api_call(meal_search) {
     // var meal_search = meal_search
-    console.log("hello")
+    
     var meal_filter_query_url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + meal_search;
     $.ajax({url: meal_filter_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
@@ -149,20 +128,21 @@ function meal_filter_api_call(meal_search) {
 
 function meal_search_results(meal_name) {
     var row_result_e = $("<div>");
-    create_div(row_result_e, meal_name);
+    meal_create_div(row_result_e, meal_name);
 }
 
-function create_div(row_result_e, meal_name){
+function meal_create_div(row_result_e, meal_name){
     //Create Each row
     console.log(meal_name)
     row_result_e.attr("class", "uk-text-center");
     row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
     row_result_e.text(meal_name)
+    
     meal_results_c_e.append(row_result_e);
 }
 
 function ingredient_d_api_call(drink_search) {
-    
+    drink_results_c_e.empty();
     var drink_ingredient_query_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
     $.ajax({url: drink_ingredient_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
@@ -175,24 +155,14 @@ function ingredient_d_api_call(drink_search) {
             drink_ing_array.push(drink_cat.toLowerCase())
         }
         var drink_ingredients = drink_ing_array;
-        // console.log(drink_ingredients)
-        // var fruits = ["Banana", "Orange", "Apple", "Mango"];
-        // var a = drink_ingredients.indexOf(drink_search);
-        // console.log(a)
-        console.log(drink_search)
         if (drink_ingredients.indexOf(drink_search) === "-1" || drink_ingredients.indexOf(drink_search) === -1) {
-            drink_filter_api_call(drink_search);
-            // console.log("hello")
+            drink_search_api_call(drink_search);
         }
-        // else if (drink_ingredients.indexOf(drink_search) != "-1" || drink_ingredients.indexOf(drink_search) != -1){
-            
-        //     drink_search_api_call();
-        //     console.log("goodbye")
         else {
             // else if (meal_categories.indexOf(drink_search) != "-1" || meal_categories.indexOf(drink_search) != -1){
+            drink_filter_api_call(drink_search);
             
-            drink_search_api_call(drink_search);
-            // console.log("hello")
+
         }
         
 
@@ -201,41 +171,61 @@ function ingredient_d_api_call(drink_search) {
 
 
 function drink_search_api_call(drink_search) {
+    // console.log(drink_search)
+    console.log("hello")
     var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
     $.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.drinks.length;
         // var array_len = Object.keys(array_len).length;
         for (var i = 0; i < array_len; i++){
-            console.log(response.drinks[i])
+            // console.log(response.drinks[i])
+            var drink_name = response.drinks[i].strDrink;
+            drink_search_results(drink_name);
         }
         
         
     }) 
-    drink_filter_api_call(drink_search);
+    
     // change_to_results_page();
 } 
 
 function drink_filter_api_call(drink_search) {
+    console.log("goodbye")
     var drink_filter_query_url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink_search;
     $.ajax({url: drink_filter_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.drinks.length;
         // var array_len = Object.keys(array_len).length;
         for (var i = 0; i < array_len; i++){
-            console.log(response.drinks[i])
+            // console.log(response.drinks[i])
+            var drink_name = response.drinks[i].strDrink;
+            drink_search_results(drink_name);
+
         }
         
         
     })  
+    drink_search_api_call(drink_search);
     // change_to_results_page();
 }
 
 
 
 
-function drink_search_results() {
+function drink_search_results(drink_name) {
+    var row_result_e = $("<div>");
+    drink_create_div(row_result_e, drink_name);
+}
+
+function drink_create_div(row_result_e, drink_name){
+    //Create Each row
+    console.log(drink_name)
+    row_result_e.attr("class", "uk-text-center");
+    row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
+    row_result_e.text(drink_name)
     
+    drink_results_c_e.append(row_result_e);
 }
 
 
