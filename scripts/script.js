@@ -7,6 +7,8 @@ var search_i_m_e = $("#search_i_m");
 var search_f_m_e = $("#search_f_m");
 var search_i_d_e = $("#search_i_d");
 var search_f_d_e = $("#search_f_d");
+var ready_b_e = $("#ready_b");
+var meal_results_c_e = $("#meal_results_c");
 
 
 
@@ -51,6 +53,13 @@ search_f_d_e.on("submit", function(event){
     // ingredient_d_api_call();
 });
 
+ready_b_e.on("click", function(event){
+    event.preventDefault();
+
+    change_to_meal_page();
+    // ingredient_d_api_call();
+});
+
 
 function category_m_api_call(meal_search) {
     
@@ -76,8 +85,8 @@ function category_m_api_call(meal_search) {
         }
         else {
         // else if (meal_categories.indexOf(drink_search) != "-1" || meal_categories.indexOf(drink_search) != -1){
+        
             meal_filter_api_call(meal_search);
-            meal_search_api_call(meal_search);
             // console.log("hello")
         }
         
@@ -87,37 +96,69 @@ function category_m_api_call(meal_search) {
 
 function meal_search_api_call(meal_search) {
     // var meal_search = meal_search
-    console.log(meal_search)
+    // console.log(meal_search)
     var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
     $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.meals.length;
+        var meal_name = response.meals[0].strMeal;
         // var array_len = Object.keys(array_len).length;
         for (var i = 0; i < array_len; i++){
-            console.log(response.meals[i])
+            // console.log(response.meals[i])
+            var meal_name = response.meals[i].strMeal;
+            meal_search_results(meal_name);
         }
 
 
+        // meal_filter_api_call(meal_search);
         
     })  
-    change_to_drink_page();
+   
+    // change_to_drink_page();
+    // meal_search_results(array_len);
 }
 
 function meal_filter_api_call(meal_search) {
     // var meal_search = meal_search
+    console.log("hello")
     var meal_filter_query_url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + meal_search;
     $.ajax({url: meal_filter_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.meals.length;
+        var meal_name = response.meals[0].strMeal;
+        
         // var array_len = Object.keys(array_len).length;
+        // var meal_name_array = [];
         for (var i = 0; i < array_len; i++){
-            console.log(response.meals[i])
+            // console.log(response.meals[i])
+            var meal_name = response.meals[i].strMeal;
+
+            meal_search_results(meal_name);
         }
+        // console.log(array_len)
+        meal_search_api_call(meal_search);
+        
         
         
     })  
-    change_to_drink_page();
+    
+    // change_to_drink_page();
+    
 
+}
+
+function meal_search_results(meal_name) {
+    var row_result_e = $("<div>");
+    create_div(row_result_e, meal_name);
+}
+
+function create_div(row_result_e, meal_name){
+    //Create Each row
+    console.log(meal_name)
+    row_result_e.attr("class", "uk-text-center");
+    row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
+    row_result_e.text(meal_name)
+    meal_results_c_e.append(row_result_e);
 }
 
 function ingredient_d_api_call(drink_search) {
@@ -149,7 +190,7 @@ function ingredient_d_api_call(drink_search) {
         //     console.log("goodbye")
         else {
             // else if (meal_categories.indexOf(drink_search) != "-1" || meal_categories.indexOf(drink_search) != -1){
-            drink_filter_api_call(drink_search);
+            
             drink_search_api_call(drink_search);
             // console.log("hello")
         }
@@ -171,7 +212,8 @@ function drink_search_api_call(drink_search) {
         
         
     }) 
-    change_to_results_page();
+    drink_filter_api_call(drink_search);
+    // change_to_results_page();
 } 
 
 function drink_filter_api_call(drink_search) {
@@ -186,11 +228,19 @@ function drink_filter_api_call(drink_search) {
         
         
     })  
-    change_to_results_page();
+    // change_to_results_page();
 }
 
+
+
+
+function drink_search_results() {
+    
+}
+
+
 function change_to_meal_page() {
-    window.open('mealss.html');
+    window.open('meals.html');
 }
 
 function change_to_drink_page() {
