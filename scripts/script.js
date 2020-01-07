@@ -146,6 +146,19 @@ function drink_filter_api_call() {
     })  
 }
 
+home_b_e.on("click",home_page);
+meals_b_e.on("click",meal_page);
+drinks_b_e.on("click",drinks_page);
+searches_div.on("click",recent_searches);
+
+document.addEventListener("keypress", function (e) {
+    if (e.key === 'Enter') {
+        console.log("enter")
+        // next_question();
+        var search = search_i_e.val();
+        get_todays_weather(search); 
+      }
+})
 
 
 
