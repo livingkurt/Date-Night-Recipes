@@ -97,8 +97,10 @@ function meal_search_api_call(meal_search) {
             console.log(response.meals[i])
         }
 
+
         
     })  
+    change_to_drink_page();
 }
 
 function meal_filter_api_call(meal_search) {
@@ -114,6 +116,8 @@ function meal_filter_api_call(meal_search) {
         
         
     })  
+    change_to_drink_page();
+
 }
 
 function ingredient_d_api_call(drink_search) {
@@ -167,6 +171,7 @@ function drink_search_api_call(drink_search) {
         
         
     }) 
+    change_to_results_page();
 } 
 
 function drink_filter_api_call(drink_search) {
@@ -181,7 +186,24 @@ function drink_filter_api_call(drink_search) {
         
         
     })  
+    change_to_results_page();
 }
+
+function change_to_meal_page() {
+    window.open('mealss.html');
+}
+
+function change_to_drink_page() {
+    window.open('drinks.html');
+}
+
+function change_to_results_page() {
+    window.open('results.html');
+}
+
+
+
+
 
 
 // searches_div.on("click",recent_searches);
