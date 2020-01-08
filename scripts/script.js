@@ -1,10 +1,5 @@
  
 
-
-
-// var meal_search = "chicken";
-// var drink_search = "Vodka"
-
 var search_i_h_e = $("#search_i_h");
 var search_f_h_e = $("#search_f_h");
 var search_i_m_e = $("#search_i_m");
@@ -15,59 +10,6 @@ var ready_b_e = $("#ready_b");
 var meal_results_c_e = $("#meal_results_c");
 var drink_results_c_e = $("#drink_results_c");
 var search_results_row_e = $("#search_results_row")
-
-
-
-// var type = ["filter", "random", "categories"]
-
-
-// var meals = "meals";
-// var drinks = "drinks";
-
-
-// Home
-search_f_h_e.on("submit", function(event){
-    event.preventDefault();
-    var search = search_i_h_e.val();
-    
-    var meal_search = search.toLowerCase();
-    console.log(meal_search)
-    // var drink_search = drink_search.toLowerCase();
-    category_m_api_call(meal_search);
-    // ingredient_d_api_call();
-  });
-// Meals
-search_f_m_e.on("submit", function(event){
-    event.preventDefault();
-    var search = search_i_m_e.val();
-
-    var meal_search = search.toLowerCase();
-    console.log(meal_search)
-    // var drink_search = drink_search.toLowerCase();
-    category_m_api_call(meal_search);
-    // ingredient_d_api_call();
-});
-// Drinks
-search_f_d_e.on("submit", function(event){
-    event.preventDefault();
-    var search = search_i_d_e.val();
-
-    var drink_search = search.toLowerCase();
-    console.log(drink_search)
-    // var drink_search = drink_search.toLowerCase();
-    ingredient_d_api_call(drink_search);
-    // ingredient_d_api_call();
-});
-
-ready_b_e.on("click", function(event){
-    event.preventDefault();
-
-    change_to_meal_page();
-    // ingredient_d_api_call();
-});
-
-
-
 
 function category_m_api_call(meal_search) {
     search_results_row_e.empty();
@@ -82,24 +24,26 @@ function category_m_api_call(meal_search) {
         }
         var meal_categories = meal_cat_array;
         if (meal_categories.indexOf(meal_search) === "-1" || meal_categories.indexOf(meal_search) === -1) {
-            meal_search_api_call(meal_search);
+            var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
+            meal_api_call(meal_search_query_url);
+
         }
         else {
-            meal_filter_api_call(meal_search);
+            var meal_filter_query_url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + meal_search;
+            var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
+            meal_api_call(meal_filter_query_url);
+            meal_api_call(meal_search_query_url);
         }
         
 
     })  
 }
 
-function meal_search_api_call(meal_search) {
-    var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
+function meal_api_call(meal_search_query_url) {
+    // var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
     $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.meals.length;
-        // var meal_name = response.meals[0].strMeal;
-        // var meal_data = response.meals[0]
-        // console.log(meal_data)
         var meal_img = response.meals[0]
         for (var i = 0; i < array_len; i++){
             var meal_name = response.meals[i].strMeal;
@@ -108,46 +52,68 @@ function meal_search_api_call(meal_search) {
             var meal_name_id = meal_name.replace(/[^a-zA-Z ]/g, "")
             var meal_name_id = meal_name_id.split(' ').join('_')
             // console.log(meal_name_id)
-            
             meal_search_results(meal_name, meal_img, meal_name_id, meal_id);
             // meal_search_results(meal_name, meal_img);
         }
     })  
 }
 
-function meal_filter_api_call(meal_search) {
-    // var meal_search = meal_search
+// function meal_search_api_call(meal_search) {
+//     var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/search.php?s=" + meal_search;
+//     $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
+//         // Assign Variables to Request
+//         var array_len = response.meals.length;
+//         // var meal_name = response.meals[0].strMeal;
+//         // var meal_data = response.meals[0]
+//         // console.log(meal_data)
+//         var meal_img = response.meals[0]
+//         for (var i = 0; i < array_len; i++){
+//             var meal_name = response.meals[i].strMeal;
+//             var meal_img = response.meals[i].strMealThumb;
+//             var meal_id = response.meals[i].idMeal;
+//             var meal_name_id = meal_name.replace(/[^a-zA-Z ]/g, "")
+//             var meal_name_id = meal_name_id.split(' ').join('_')
+//             // console.log(meal_name_id)
+            
+//             meal_search_results(meal_name, meal_img, meal_name_id, meal_id);
+//             // meal_search_results(meal_name, meal_img);
+//         }
+//     })  
+// }
+
+// function meal_filter_api_call(meal_search) {
+//     // var meal_search = meal_search
     
-    var meal_filter_query_url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + meal_search;
-    $.ajax({url: meal_filter_query_url,method: "GET"}).then(function(response) {
-        // Assign Variables to Request
-        var array_len = response.meals.length;
-        var meal_name = response.meals[0].strMeal;
+//     var meal_filter_query_url = "https://www.themealdb.com/api/json/v1/1/filter.php?c=" + meal_search;
+//     $.ajax({url: meal_filter_query_url,method: "GET"}).then(function(response) {
+//         // Assign Variables to Request
+//         var array_len = response.meals.length;
+//         var meal_name = response.meals[0].strMeal;
         
-        // var array_len = Object.keys(array_len).length;
-        // var meal_name_array = [];
-        for (var i = 0; i < array_len; i++){
-            // console.log(response.meals[i])
-            var meal_name = response.meals[i].strMeal;
-            var meal_img = response.meals[i].strMealThumb;
-            var meal_id = response.meals[i].idMeal;
-            console.log(meal_id)
-            var meal_name_id = meal_name.replace(/[^a-zA-Z ]/g, "")
-            var meal_name_id = meal_name_id.split(' ').join('_')
-            console.log(meal_name_id)
-            meal_search_results(meal_name, meal_img, meal_name_id, meal_id);
-        }
-        // console.log(array_len)
-        meal_search_api_call(meal_search);
+//         // var array_len = Object.keys(array_len).length;
+//         // var meal_name_array = [];
+//         for (var i = 0; i < array_len; i++){
+//             // console.log(response.meals[i])
+//             var meal_name = response.meals[i].strMeal;
+//             var meal_img = response.meals[i].strMealThumb;
+//             var meal_id = response.meals[i].idMeal;
+//             console.log(meal_id)
+//             var meal_name_id = meal_name.replace(/[^a-zA-Z ]/g, "")
+//             var meal_name_id = meal_name_id.split(' ').join('_')
+//             console.log(meal_name_id)
+//             meal_search_results(meal_name, meal_img, meal_name_id, meal_id);
+//         }
+//         // console.log(array_len)
+//         meal_search_api_call(meal_search);
         
         
         
-    })  
+//     })  
     
-    // change_to_drink_page();
+//     // change_to_drink_page();
     
 
-}
+// }
 
 function meal_search_results(meal_name, meal_img, meal_name_id, meal_id) {
     var row_result_e = $("<div>"); // <div>
@@ -317,3 +283,45 @@ $(document).on('click', '.d_results_container' , function(event){
     window.open('results.html?meal_id=' + final_meal_id + '&drink_id=' + final_drink_id, '_self')
 
 })
+
+
+// Home
+search_f_h_e.on("submit", function(event){
+    event.preventDefault();
+    var search = search_i_h_e.val();
+    
+    var meal_search = search.toLowerCase();
+    console.log(meal_search)
+    // var drink_search = drink_search.toLowerCase();
+    category_m_api_call(meal_search);
+    // ingredient_d_api_call();
+  });
+// Meals
+search_f_m_e.on("submit", function(event){
+    event.preventDefault();
+    var search = search_i_m_e.val();
+
+    var meal_search = search.toLowerCase();
+    console.log(meal_search)
+    // var drink_search = drink_search.toLowerCase();
+    category_m_api_call(meal_search);
+    // ingredient_d_api_call();
+});
+// Drinks
+search_f_d_e.on("submit", function(event){
+    event.preventDefault();
+    var search = search_i_d_e.val();
+
+    var drink_search = search.toLowerCase();
+    console.log(drink_search)
+    // var drink_search = drink_search.toLowerCase();
+    ingredient_d_api_call(drink_search);
+    // ingredient_d_api_call();
+});
+
+ready_b_e.on("click", function(event){
+    event.preventDefault();
+
+    change_to_meal_page();
+    // ingredient_d_api_call();
+});
