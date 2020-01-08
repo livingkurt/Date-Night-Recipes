@@ -358,30 +358,88 @@ $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
     // Assign Variables to Request
     var meal = response.meals[0]
     console.log(meal)
+
     var meal_name = response.meals[0].strMeal
     console.log(meal_name)
-    for (var i = 0; i < 20; i++){
-        var meal_measurements = response.meals[0]["strMeasure" + i]
-        var meal_ingredients = response.meals[0]["strIngredient" + i]
-        console.log(meal_measurements + " " + meal_ingredients)
-    }
+
+    var meal_img = response.meals[0].strMealThumb;
+    console.log(meal_img)
+
     var meal_instructions = response.meals[0].strInstructions
     console.log(meal_instructions)
 
+    var meal_youtube = response.meals[0].strYoutube
+    console.log(meal_youtube)
+
+    for (var i = 0; i < 20; i++){
+        var meal_measurements = response.meals[0]["strMeasure" + i]
+        var meal_ingredients = response.meals[0]["strIngredient" + i]
+        
+        if (meal_measurements != null || meal_ingredients != null){
+            console.log(meal_measurements + " " + meal_ingredients)
+        }
+        else if (meal_measurements === null || meal_ingredients === null){
+            // console.log("")
+            break
+        }   
+    }
+    
+
 })  
+
+    var row_result_e = $("<div>"); // <div>
+    var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
+    var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
+    // <div class="">Meal Name</div>
+    var result_img_e = $("<img>"); // <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
+    var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
+    var result_h6_e = $("<h6>"); // <div>
+
+    // console.log(drink_name)
+    
+    row_result_e.attr("style", "width: 400px;")
+    row_result_e.attr("id", drink_name_id)
+    row_result_e.attr("class", "results_container")
+    result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
+    result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
+    result_img_e.attr("src", drink_img);
+    // result_img_e.attr("height", "300px");
+    // result_img_e.attr("width", "300px");
+    // result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    // result_h6_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    result_name_e.text(drink_name)
+    
+    search_results_row_e.append(row_result_e);
+    row_result_e.append(result_name_e, result_div_e);
+    result_div_e.append(result_img_e) // result_small_div_e
+    result_small_div_e.append(result_h6_e)
 
 var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007"
 $.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
     // Assign Variables to Request
     var drink = response.drinks[0]
     console.log(drink)
+
     var drink_name = response.drinks[0].strDrink
     console.log(drink_name)
+
+    var drink_img = response.drinks[0].strDrinkThumb;
+    console.log(drink_img)
+
+    var drink_instructions = response.drinks[0].strInstructions
+    console.log(drink_instructions)
+
     for (var i = 0; i < 20; i++){
         var drink_measurements = response.drinks[0]["strMeasure" + i]
         var drink_ingredients = response.drinks[0]["strIngredient" + i]
-        console.log(drink_measurements + " " + drink_ingredients)
+        
+        if (drink_measurements != null || drink_ingredients != null){
+            console.log(drink_measurements + " " + drink_ingredients)
+        }
+        else if (drink_measurements === null || drink_ingredients === null){
+            // console.log("")
+            break
+        }   
     }
-    var drink_instructions = response.drinks[0].strInstructions
-    console.log(drink_instructions)
+    
 })  
