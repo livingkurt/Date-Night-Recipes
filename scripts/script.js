@@ -92,11 +92,19 @@ function meal_search_api_call(meal_search) {
     $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.meals.length;
-        var meal_name = response.meals[0].strMeal;
+        // var meal_name = response.meals[0].strMeal;
+        // var meal_data = response.meals[0]
+        // console.log(meal_data)
+        var meal_img = response.meals[0]
         for (var i = 0; i < array_len; i++){
             var meal_name = response.meals[i].strMeal;
             var meal_img = response.meals[i].strMealThumb;
-            meal_search_results(meal_name, meal_img);
+            var meal_name_id = meal_name.replace(/[^a-zA-Z ]/g, "")
+            var meal_name_id = meal_name_id.split(' ').join('_')
+            // console.log(meal_name_id)
+            
+            meal_search_results(meal_name, meal_img, meal_name_id);
+            // meal_search_results(meal_name, meal_img);
         }
     })  
 }
@@ -116,8 +124,10 @@ function meal_filter_api_call(meal_search) {
             // console.log(response.meals[i])
             var meal_name = response.meals[i].strMeal;
             var meal_img = response.meals[i].strMealThumb;
-
-            meal_search_results(meal_name, meal_img, i);
+            var meal_name_id = meal_name.replace(/[^a-zA-Z ]/g, "")
+            var meal_name_id = meal_name_id.split(' ').join('_')
+            console.log(meal_name_id)
+            meal_search_results(meal_name, meal_img, meal_name_id);
         }
         // console.log(array_len)
         meal_search_api_call(meal_search);
@@ -131,7 +141,7 @@ function meal_filter_api_call(meal_search) {
 
 }
 
-function meal_search_results(meal_name, meal_img, i) {
+function meal_search_results(meal_name, meal_img, meal_name_id) {
     var row_result_e = $("<div>"); // <div>
     var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
     var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
@@ -143,19 +153,21 @@ function meal_search_results(meal_name, meal_img, i) {
     // console.log(meal_name)
     
     row_result_e.attr("style", "width: 400px;")
-    row_result_e.addClass("results")
+    row_result_e.attr("id", meal_name_id);
+    row_result_e.attr("class", "results_container")
+    row_result_e.attr("onclick", "get_result()");
     result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
     result_img_e.attr("src", meal_img);
     // result_img_e.attr("height", "300px");
     // result_img_e.attr("width", "300px");
-    result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    // result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
     // result_h6_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
     result_name_e.text(meal_name)
     
     search_results_row_e.append(row_result_e);
     row_result_e.append(result_name_e, result_div_e);
-    result_div_e.append(result_img_e, result_small_div_e)
+    result_div_e.append(result_img_e) // , result_small_div_e
     result_small_div_e.append(result_h6_e)
     
     // <div>
@@ -226,8 +238,12 @@ function drink_search_api_call(drink_search) {
         for (var i = 0; i < array_len; i++){
             // console.log(response.drinks[i])
             var drink_name = response.drinks[i].strDrink;
+            var drink_name_id = drink_name.replace(/[^a-zA-Z ]/g, "")
+            var drink_name_id = drink_name_id.split(' ').join('_')
+            console.log(drink_name_id)
             var drink_img = response.drinks[i].strDrinkThumb;
-            drink_search_results(drink_name, drink_img);
+            
+            drink_search_results(drink_name, drink_img, drink_name_id);
         }
         
         
@@ -247,8 +263,11 @@ function drink_filter_api_call(drink_search) {
         for (var i = 0; i < array_len; i++){
             // console.log(response.drinks[i])
             var drink_name = response.drinks[i].strDrink;
+            var drink_name_id = drink_name.replace(/[^a-zA-Z ]/g, "")
+            var drink_name_id = drink_name_id.split(' ').join('_')
+            console.log(drink_name_id)
             var drink_img = response.drinks[i].strDrinkThumb;
-            drink_search_results(drink_name, drink_img);
+            drink_search_results(drink_name, drink_img, drink_name_id);
 
         }
         drink_search_api_call(drink_search);
@@ -260,7 +279,7 @@ function drink_filter_api_call(drink_search) {
 
 
 
-function drink_search_results(drink_name, drink_img) {
+function drink_search_results(drink_name, drink_img, drink_name_id) {
     var row_result_e = $("<div>"); // <div>
     var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
     var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
@@ -269,22 +288,23 @@ function drink_search_results(drink_name, drink_img) {
     var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
     var result_h6_e = $("<h6>"); // <div>
 
-    console.log(drink_name)
+    // console.log(drink_name)
     
     row_result_e.attr("style", "width: 400px;")
-    // row_result_e.addClass("results")
-    result_name_e.attr("class", "results uk-card uk-card-default uk-card-body");
+    row_result_e.attr("id", drink_name_id)
+    row_result_e.attr("class", "results_container")
+    result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
     result_img_e.attr("src", drink_img);
     // result_img_e.attr("height", "300px");
     // result_img_e.attr("width", "300px");
-    result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    // result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
     // result_h6_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
     result_name_e.text(drink_name)
     
     search_results_row_e.append(row_result_e);
     row_result_e.append(result_name_e, result_div_e);
-    result_div_e.append(result_img_e, result_small_div_e)
+    result_div_e.append(result_img_e) // result_small_div_e
     result_small_div_e.append(result_h6_e)
 }
 
@@ -310,19 +330,58 @@ function change_to_drink_page() {
 function change_to_results_page() {
     window.open('results.html', '_self');
 }
-var container_e = $(".results");
+var container_e = $(".alllllsls");
 
-container_e.on("click", function(){
+container_e.on("click", function(event){
+    // event.preventDefault();
     console.log("hello")
     console.log(this)
 });
 
 // $(".results").on("click", get_result);
 
-function get_result() {
+function get_result(event) {
     // event.preventDefault();
     console.log("hello")
-    console.log(this)
+    console.log($(this.currentTarget))
     // change_to_meal_page();
     // ingredient_d_api_call();
 };
+
+$('.results_container').on('click', '.cheap', function(){
+    $(this)
+})
+
+
+var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772"
+$.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
+    // Assign Variables to Request
+    var meal = response.meals[0]
+    console.log(meal)
+    var meal_name = response.meals[0].strMeal
+    console.log(meal_name)
+    for (var i = 0; i < 20; i++){
+        var meal_measurements = response.meals[0]["strMeasure" + i]
+        var meal_ingredients = response.meals[0]["strIngredient" + i]
+        console.log(meal_measurements + " " + meal_ingredients)
+    }
+    var meal_instructions = response.meals[0].strInstructions
+    console.log(meal_instructions)
+
+})  
+
+var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=11007"
+$.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
+    // Assign Variables to Request
+    var drink = response.drinks[0]
+    console.log(drink)
+    var drink_name = response.drinks[0].strDrink
+    console.log(drink_name)
+    for (var i = 0; i < 20; i++){
+        var drink_measurements = response.drinks[0]["strMeasure" + i]
+        var drink_ingredients = response.drinks[0]["strIngredient" + i]
+        console.log(drink_measurements + " " + drink_ingredients)
+    }
+    var drink_instructions = response.drinks[0].strInstructions
+    console.log(drink_instructions)
+})  
