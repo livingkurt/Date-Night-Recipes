@@ -159,7 +159,7 @@ function meal_search_results(meal_name, meal_img, meal_name_id) {
     row_result_e.attr("style", "width: 400px;")
     row_result_e.attr("id", meal_name_id);
     row_result_e.attr("class", "results_container")
-    row_result_e.attr("onclick", "get_result()");
+    // row_result_e.attr("onclick", "get_result()");
     result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
     result_img_e.attr("src", meal_img);
@@ -334,26 +334,27 @@ function change_to_drink_page() {
 function change_to_results_page() {
     window.open('results.html', '_self');
 }
-var container_e = $(".alllllsls");
+// var container_e = $(".alllllsls");
 
-container_e.on("click", function(event){
-    // event.preventDefault();
-    console.log("hello")
-    console.log(this)
-});
+// container_e.on("click", function(event){
+//     // event.preventDefault();
+//     console.log("hello")
+//     console.log(this)
+// });
 
-// $(".results").on("click", get_result);
+// // $(".results").on("click", get_result);
 
-function get_result(event) {
-    // event.preventDefault();
-    console.log("hello")
-    console.log($(this.currentTarget))
-    // change_to_meal_page();
-    // ingredient_d_api_call();
-};
+// function get_result(event) {
+//     // event.preventDefault();
+//     console.log("hello")
+//     console.log($(this.currentTarget))
+//     // change_to_meal_page();
+//     // ingredient_d_api_call();
+// };
 
-$('.results_container').on('click', '.cheap', function(){
-    $(this)
+$(document).on('click', '.results_container' , function(event){
+    // $(this)
+    console.log($(this).attr("id"))
 })
 
 // console.log("hello")
