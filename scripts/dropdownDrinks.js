@@ -6,6 +6,11 @@ var search_i_d_e = $("#search_i_d");
 // onclick(drinkSelection)
 
 console.log(window.location.search);
-var searchTerm = window.location.search.slice(7);
+var searchTerm = window.location.search.slice(1);
+var params = new URLSearchParams(searchTerm);
+var meal_id = params.get("meal_id");
+var drink = params.get("drink");
 console.log(searchTerm);
-search_i_d_e.val(searchTerm);
+if (drink) {
+    search_i_d_e.val(drink);
+}
