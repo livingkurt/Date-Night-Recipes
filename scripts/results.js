@@ -5,26 +5,11 @@ var params = new URLSearchParams(window.location.search.slice(1));
         console.log(meal_id, drink_id);
     }
 
-
-// console.log(final_meal_id)
-// console.log(final_drink_id)
-// });
-// window.open('results.html?drink_id=' + final_drink_id, '_self');
-// $(win.document).ready(function() {
-// console.log(final_meal_id)
-// console.log(final_drink_id)
 get_meal_results(meal_id);
 get_drink_results(drink_id);//the document is loaded by here, this is probably where you should do your stuff.
 
 
 function get_meal_results(meal_id) {
-    // console.log(final_meal_id)
-    // window.final_meal_id
-    // console.log(final_meal_id)
-    // final_meal_id = final_meal_id.toString()
-    // final_drink_id = 11007
-    // var final_meal_id = localStorage.getItem("meal_id");
-    // var meal_id = params.get("meal_id");
     var meal_search_query_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" +  meal_id
     $.ajax({url: meal_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
@@ -102,10 +87,7 @@ function get_meal_results(meal_id) {
 
 
 function get_drink_results(drink_id) {
-    // var drink_id = params.get("drink_id");
-    // var final_drink_id = localStorage.getItem("drink_id");
     console.log(drink_id)
-    // final_drink_id = final_drink_id.toString()
     var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink_id
     $.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
