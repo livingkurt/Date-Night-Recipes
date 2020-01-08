@@ -10,6 +10,7 @@ var search_f_d_e = $("#search_f_d");
 var ready_b_e = $("#ready_b");
 var meal_results_c_e = $("#meal_results_c");
 var drink_results_c_e = $("#drink_results_c");
+var search_results_row_e = $("#search_results_row")
 
 
 // var type = ["filter", "random", "categories"]
@@ -61,8 +62,10 @@ ready_b_e.on("click", function(event){
 });
 
 
+
+
 function category_m_api_call(meal_search) {
-    meal_results_c_e.empty();
+    search_results_row_e.empty();
     var meal_category_query_url = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
     $.ajax({url: meal_category_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
@@ -92,7 +95,8 @@ function meal_search_api_call(meal_search) {
         var meal_name = response.meals[0].strMeal;
         for (var i = 0; i < array_len; i++){
             var meal_name = response.meals[i].strMeal;
-            meal_search_results(meal_name);
+            var meal_img = response.meals[i].strMealThumb;
+            meal_search_results(meal_name, meal_img);
         }
     })  
 }
@@ -111,8 +115,9 @@ function meal_filter_api_call(meal_search) {
         for (var i = 0; i < array_len; i++){
             // console.log(response.meals[i])
             var meal_name = response.meals[i].strMeal;
+            var meal_img = response.meals[i].strMealThumb;
 
-            meal_search_results(meal_name);
+            meal_search_results(meal_name, meal_img, i);
         }
         // console.log(array_len)
         meal_search_api_call(meal_search);
@@ -126,23 +131,62 @@ function meal_filter_api_call(meal_search) {
 
 }
 
-function meal_search_results(meal_name) {
-    var row_result_e = $("<div>");
-    meal_create_div(row_result_e, meal_name);
+function meal_search_results(meal_name, meal_img, i) {
+    var row_result_e = $("<div>"); // <div>
+    var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
+    var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
+    // <div class="">Meal Name</div>
+    var result_img_e = $("<img>"); // <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
+    var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
+    var result_h6_e = $("<h6>"); // <div>
+
+    // console.log(meal_name)
+    
+    row_result_e.attr("style", "width: 400px;")
+    row_result_e.addClass("results")
+    result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
+    result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
+    result_img_e.attr("src", meal_img);
+    // result_img_e.attr("height", "300px");
+    // result_img_e.attr("width", "300px");
+    result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    // result_h6_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    result_name_e.text(meal_name)
+    
+    search_results_row_e.append(row_result_e);
+    row_result_e.append(result_name_e, result_div_e);
+    result_div_e.append(result_img_e, result_small_div_e)
+    result_small_div_e.append(result_h6_e)
+    
+    // <div>
+    //     <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
+    //     <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
+    //         <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
+    //         <div
+    //             class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
+    //             <h6>Select</h6>
+    //         </div>
+    //     </div>
+    // </div>
+
+
+    // meal_create_div(row_result_e, meal_name);
 }
 
-function meal_create_div(row_result_e, meal_name){
-    //Create Each row
-    console.log(meal_name)
-    row_result_e.attr("class", "uk-text-center");
-    row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
-    row_result_e.text(meal_name)
+// function meal_create_div(row_result_e, meal_name){
+//     //Create Each row
+//     console.log(meal_name)
+//     row_result_e.attr("class", "uk-card uk-card-default uk-card-body");
+//     // row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
+//     row_result_e.text(meal_name)
     
-    meal_results_c_e.append(row_result_e);
-}
+//     meal_results_c_e.append(row_result_e);
+// }
+
+
 
 function ingredient_d_api_call(drink_search) {
-    drink_results_c_e.empty();
+    search_results_row_e.empty();
     var drink_ingredient_query_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
     $.ajax({url: drink_ingredient_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
@@ -172,16 +216,18 @@ function ingredient_d_api_call(drink_search) {
 
 function drink_search_api_call(drink_search) {
     // console.log(drink_search)
-    console.log("hello")
+    // console.log("hello")
     var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
     $.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.drinks.length;
+        
         // var array_len = Object.keys(array_len).length;
         for (var i = 0; i < array_len; i++){
             // console.log(response.drinks[i])
             var drink_name = response.drinks[i].strDrink;
-            drink_search_results(drink_name);
+            var drink_img = response.drinks[i].strDrinkThumb;
+            drink_search_results(drink_name, drink_img);
         }
         
         
@@ -191,126 +237,92 @@ function drink_search_api_call(drink_search) {
 } 
 
 function drink_filter_api_call(drink_search) {
-    console.log("goodbye")
+    // console.log("goodbye")
     var drink_filter_query_url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink_search;
     $.ajax({url: drink_filter_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.drinks.length;
         // var array_len = Object.keys(array_len).length;
+        // console.log(array_len)
         for (var i = 0; i < array_len; i++){
             // console.log(response.drinks[i])
             var drink_name = response.drinks[i].strDrink;
-            drink_search_results(drink_name);
+            var drink_img = response.drinks[i].strDrinkThumb;
+            drink_search_results(drink_name, drink_img);
 
         }
-        
+        drink_search_api_call(drink_search);
         
     })  
-    drink_search_api_call(drink_search);
     // change_to_results_page();
 }
 
 
 
 
-function drink_search_results(drink_name) {
-    var row_result_e = $("<div>");
-    drink_create_div(row_result_e, drink_name);
+function drink_search_results(drink_name, drink_img) {
+    var row_result_e = $("<div>"); // <div>
+    var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
+    var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
+    // <div class="">Meal Name</div>
+    var result_img_e = $("<img>"); // <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
+    var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
+    var result_h6_e = $("<h6>"); // <div>
+
+    console.log(drink_name)
+    
+    row_result_e.attr("style", "width: 400px;")
+    // row_result_e.addClass("results")
+    result_name_e.attr("class", "results uk-card uk-card-default uk-card-body");
+    result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
+    result_img_e.attr("src", drink_img);
+    // result_img_e.attr("height", "300px");
+    // result_img_e.attr("width", "300px");
+    result_small_div_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    // result_h6_e.attr("class", "uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default");
+    result_name_e.text(drink_name)
+    
+    search_results_row_e.append(row_result_e);
+    row_result_e.append(result_name_e, result_div_e);
+    result_div_e.append(result_img_e, result_small_div_e)
+    result_small_div_e.append(result_h6_e)
 }
 
-function drink_create_div(row_result_e, drink_name){
-    //Create Each row
-    console.log(drink_name)
-    row_result_e.attr("class", "uk-text-center");
-    row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
-    row_result_e.text(drink_name)
+// function drink_create_div(row_result_e, drink_name){
+//     //Create Each row
+//     console.log(drink_name)
+//     row_result_e.attr("class", "uk-text-center");
+//     row_result_e.attr("style", "display: flex; border: 1px solid black; height: 50px;");
+//     row_result_e.text(drink_name)
     
-    drink_results_c_e.append(row_result_e);
-}
+//     drink_results_c_e.append(row_result_e);
+// }
 
 
 function change_to_meal_page() {
-    window.open('meals.html');
+    window.open('meals.html', '_self');
 }
 
 function change_to_drink_page() {
-    window.open('drinks.html');
+    window.open('drinks.html', '_self');
 }
 
 function change_to_results_page() {
-    window.open('results.html');
+    window.open('results.html', '_self');
 }
+var container_e = $(".results");
 
+container_e.on("click", function(){
+    console.log("hello")
+    console.log(this)
+});
 
+// $(".results").on("click", get_result);
 
-
-
-
-// searches_div.on("click",recent_searches);
-
-
-
-
-// search_f_e.addEventListener("keypress", function (e,event) {
-//     event.preventDefault();
-//     if (e.key === 'Enter') {
-//         console.log("enter")
-//         // next_question();
-        
-//         // get_todays_weather(search); 
-//       }
-// })
-
-
-
-// meal_api_calls(meal_search_query_url)
-// drink_api_calls(drink_search_query_url)
-// meal_api_calls(meal_filter_query_url)
-// drink_api_calls(drink_filter_query_url)
-// meal_api_calls(meal_category_query_url)
-// drink_api_calls(drink_category_query_url)
-
-
-// // function api_calls(query_url, type) {
-// //     $.ajax({url: query_url,method: "GET"}).then(function(response) {
-// //         // Assign Variables to Request
-// //         // console.log(query_url)
-// //         // console.log(type)
-// //         var data = response[type]
-// //         var array_len = data.length;
-// //         console.log(array_len)
-// //         var array_len = Object.keys(array_len).length;
-// //         for (var i = 0; i < array_len; i++){
-// //             console.log(data[i])
-// //         }
-        
-    
-// //     })  
-// // }
-
-// function meal_api_calls(query_url) {
-//     $.ajax({url: query_url,method: "GET"}).then(function(response) {
-//         // Assign Variables to Request
-//         var array_len = response.meals.length;
-//         // var array_len = Object.keys(array_len).length;
-//         for (var i = 0; i < array_len; i++){
-//             console.log(response.meals[i])
-//         }
-            
-    
-//     })  
-// }
-
-// function drink_api_calls(query_url) {
-//     $.ajax({url: query_url,method: "GET"}).then(function(response) {
-//         // Assign Variables to Request
-//         var array_len = response.drinks.length;
-//         // var array_len = Object.keys(array_len).length;
-//         for (var i = 0; i < array_len; i++){
-//             console.log(response.drinks[i])
-//         }
-        
-    
-//     })  
-// }
-
+function get_result() {
+    // event.preventDefault();
+    console.log("hello")
+    console.log(this)
+    // change_to_meal_page();
+    // ingredient_d_api_call();
+};
