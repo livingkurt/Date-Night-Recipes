@@ -105,8 +105,11 @@ function create_instructions_label(instructions_label_e){
 function create_instructions(recipe, instructions_p_e, ){
     // Assign Instruction to Variable
     var instructions = recipe.strInstructions
+    // instructions_p_e.html.text.instructions.split(".").join("<br/>");
+    var instructions_len = instructions.match(/./gi).length;
+    console.log(instructions_len)
     // Change Text
-    instructions_p_e.text(instructions)
+    instructions_p_e.html(instructions.split(".").join(".<br/> - "))
 }
 
 function place_ingredients(recipe, ingredient_list_e) {
