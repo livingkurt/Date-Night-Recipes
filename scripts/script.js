@@ -90,7 +90,7 @@ function ingredient_d_api_call(drink_search) {
             // Add call response to array while changing them all to lower case
             drink_ing_array.push(drink_cat.toLowerCase())
         }
-         // Reassign the cateogry array to a new variable
+        // Reassign the cateogry array to a new variable
         var drink_ingredients = drink_ing_array;
         // If the drink search input is the not in the drink ingredients list
         if (drink_ingredients.indexOf(drink_search) === "-1" || drink_ingredients.indexOf(drink_search) === -1) {
@@ -151,7 +151,7 @@ function search_results(name, img, id) {
     result_name_e.text(name)
 
     // Creates a div for image
-    var result_div_e = $("<div>"); 
+    var result_div_e = $("<div>");
     // Adds a class to the div
     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
     // Adds round edges of container
@@ -175,7 +175,12 @@ $(document).on('click', '.results_container', function (event) {
         // Assign the id that from the user chosen search result
         var final_meal_id = $(this).attr("id")
         // Open Drinks page and store id data inside of the url
-        window.open('drinks.html?meal_id=' + final_meal_id, '_self');
+        var url = 'drinks.html?meal_id=' + final_meal_id;
+        var params = new URLSearchParams(window.location.search.slice(1));
+        if (params.has("drink_id")) {
+            url += "&drink_id=" + params.get("drink_id");
+        }
+        window.open(url, '_self');
     }
     // If you are on the drinks.html page
     else if (window.location.href.indexOf("drinks") > -1) {
@@ -223,3 +228,23 @@ ready_b_e.on("click", function (event) {
     window.open('meals.html', '_self');
 });
 
+// Warning, major hack
+// Try and preserve the querystring for everylink that is clicked on
+$("a").on("click", function (event) {
+    event.preventDefault();
+    var oldParams = new URLSearchParams(window.location.search.slice(1));
+
+    var params = event.target.getAttribute("href").split("?");
+    if (params[1]) {
+        var newParams = new URLSearchParams(params[1]);
+        newParams.forEach(function (value, key) {
+            if (value) {
+                oldParams.set(key, value);
+            }
+            oldParams.set(key, value)
+        })
+    }
+    window.location.href = (params[0] + "?" + oldParams.toString())
+
+
+})
