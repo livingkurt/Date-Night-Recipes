@@ -145,6 +145,8 @@ function search_results(name, img, id) {
     var result_name_e = $("<div>");
     // Adds a class to the div
     result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
+    // Adds round edges of container
+    result_name_e.attr("style", "border-radius: 25px; opacity: 0.9; font-size: 20px;");
     // Changes to Search Result Name
     result_name_e.text(name)
 
@@ -152,10 +154,14 @@ function search_results(name, img, id) {
     var result_div_e = $("<div>"); 
     // Adds a class to the div
     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
+    // Adds round edges of container
+    result_div_e.attr("style", "border-radius: 25px; 25px; opacity: 0.9; ");
     // Creates img element
     var result_img_e = $("<img>");
     // Adds the response img
     result_img_e.attr("src", img);
+    // Adds round edges of container
+    result_img_e.attr("style", "border-radius: 25px; 25px; border: 4px solid #d8d8d8;");
     // Places the img in parent div
     result_div_e.append(result_img_e)
     // Places the name and div in parent div
