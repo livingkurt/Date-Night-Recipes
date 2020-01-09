@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Date Night</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href=css/style.css> <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="scripts/uikit.min.js"></script>
     <script src="scripts/uikit-icons.min.js"></script>
 </head>
 
-<body class="uk-background-fixed" style="min-height: 100%; height: fit-content; width: 100%; background-image: url(images/veggies.jpg);">
+<body class="uk-background-fixed"
+    style="min-height: 100%; height: fit-content; width: 100%; background-image: url(images/veggies.jpg);">
     <!-- Webpage container  -->
     <div class="uk-container" style="height: fit-content; width: 100%;">
         <!-- This is what needs to be added to class of above container to get wallpaper. However I cant figure out how to get it to take up the whole page. Image does not matter just trying to get HTML right
@@ -25,8 +27,12 @@
                     <div>
 
                         <ul class="uk-navbar-nav uk-dropdown-navbar">
-                            <li class="uk-active"><a href="index.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Home</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Meals</a></li>
+                            <li class="uk-active"><a href="index.html"
+                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
+                                    style="margin: auto; width: max-content">Home</a></li>
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html"
+                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
+                                    style="margin: auto; width: max-content">Meals</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
@@ -59,7 +65,9 @@
                                     </div>
                                 </ul>
                             </div>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Drinks</a></li>
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html"
+                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
+                                    style="margin: auto; width: max-content">Drinks</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
 
@@ -102,7 +110,9 @@
                                 </ul>
                             </div>
 
-                            <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Results</a></li>
+                            <li class="uk-active"><a href="results.html"
+                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
+                                    style="margin: auto; width: max-content">Results</a></li>
                         </ul>
                     </div>
             </nav>
@@ -118,35 +128,41 @@
             </div>
             <!-- row 1 Title  -->
             <row>
-                <h1 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;">Drinks</h1>
+                <h1 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
+                    style="margin: auto; width: max-content;">Drinks</h1>
 
             </row>
 
             <row>
-                <h5 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;">Search Drink Recipes For The Perfect Date</h5>
+                <h5 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
+                    style="margin: auto; width: max-content;">Search Drink Recipes For The Perfect Date</h5>
             </row>
             <!-- recent searches carossel section -->
             <row>
 
-                <form id="search_f" class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded" style="margin: auto; width: max-content;">
+                <form id="search_f"
+                    class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded"
+                    style="margin: auto; width: max-content;">
                     <span uk-search-icon></span>
-                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;" type="search" placeholder="Main ingredient">
+                    <input id="search_i"
+                        class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
+                        style="margin: auto; width: max-content;" type="search" placeholder="Main ingredient">
                 </form>
             </row>
 
             </row>
-                <!-- row 3 Most recent Searches  -->
-                <row>
-                    <!-- <row>
+            <!-- row 3 Most recent Searches  -->
+            <row>
+                <!-- <row>
                         <h5 class="uk-text-center">Most Recent Searches</h5>
                     </row> -->
-                    <!-- recent searches carossel -->
-                    <row>
-                        <div id="search_results_row" class="uk-grid-match uk-child-width-1-5@m uk-text-center" uk-grid>
+                <!-- recent searches carossel -->
+                <row>
+                    <div id="search_results_row" class="uk-grid-match uk-child-width-1-5@m uk-text-center" uk-grid>
 
-                        </div>
-                    </row>
+                    </div>
                 </row>
+            </row>
 
         </div>
         <footer>
