@@ -51,7 +51,7 @@ function meal_api_call(meal_search_query_url) {
             var meal_name_id = meal_name_id.split(' ').join('_')
             // console.log(meal_name_id)
             // meal_search_results(meal_name, meal_img, meal_id);
-            meal_search_results(meal_name, meal_img, meal_id);
+            search_results(meal_name, meal_img, meal_id);
             // meal_search_results(meal_name, meal_img);
         }
     })  
@@ -137,32 +137,32 @@ function meal_api_call(meal_search_query_url) {
 
 // }
 
-function meal_search_results(meal_name, meal_img, meal_id) {
-    var row_result_e = $("<div>"); // <div>
-    var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
-    var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
-    // <div class="">Meal Name</div>
-    var result_img_e = $("<img>"); // <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
-    var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
-    var result_h6_e = $("<h6>"); // <div>
+// function meal_search_results(meal_name, meal_img, meal_id) {
+//     var row_result_e = $("<div>"); // <div>
+//     var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
+//     var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
+//     // <div class="">Meal Name</div>
+//     var result_img_e = $("<img>"); // <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
+//     var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
+//     var result_h6_e = $("<h6>"); // <div>
 
-    // console.log(meal_name)
+//     // console.log(meal_name)
     
-    row_result_e.attr("style", "width: 400px;")
-    row_result_e.attr("id", meal_id);
-    row_result_e.attr("class", "m_results_container")
-    // row_result_e.attr("onclick", "get_result()");
-    result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
-    result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
-    result_img_e.attr("src", meal_img);
-    result_name_e.text(meal_name)
+//     row_result_e.attr("style", "width: 400px;")
+//     row_result_e.attr("id", meal_id);
+//     row_result_e.attr("class", "m_results_container")
+//     // row_result_e.attr("onclick", "get_result()");
+//     result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
+//     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
+//     result_img_e.attr("src", meal_img);
+//     result_name_e.text(meal_name)
     
-    search_results_row_e.append(row_result_e);
-    row_result_e.append(result_name_e, result_div_e);
-    result_div_e.append(result_img_e) // , result_small_div_e
-    result_small_div_e.append(result_h6_e)
+//     search_results_row_e.append(row_result_e);
+//     row_result_e.append(result_name_e, result_div_e);
+//     result_div_e.append(result_img_e) // , result_small_div_e
+//     result_small_div_e.append(result_h6_e)
     
-}
+// }
 
 
 
@@ -242,7 +242,7 @@ function drink_api_call(drink_search_query_url) {
             var drink_id = response.drinks[i].idDrink;
             console.log(drink_id)
             // drink_search_results(drink_name, drink_img, drink_name_id, drink_id);
-            drink_search_results(drink_name, drink_img, drink_id);
+            search_results(drink_name, drink_img, drink_id);
         }
         
         
@@ -308,7 +308,32 @@ function drink_api_call(drink_search_query_url) {
 
 
 
-function drink_search_results(drink_name, drink_img, drink_id) {
+
+
+// function drink_search_results(drink_name, drink_img, drink_id) {
+//     var row_result_e = $("<div>"); // <div>
+//     var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
+//     var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
+//     // <div class="">Meal Name</div>
+//     var result_img_e = $("<img>"); // <img src="https://via.placeholder.com/150x150.png" alt="Placeholder">
+//     var result_small_div_e = $("<div>"); // <div class="uk-position-medium uk-position-bottom-center uk-overlay uk-overlay-default">
+//     var result_h6_e = $("<h6>"); // <div>
+    
+//     row_result_e.attr("style", "width: 400px;")
+//     row_result_e.attr("id", drink_id)
+//     row_result_e.attr("class", "d_results_container")
+//     result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
+//     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
+//     result_img_e.attr("src", drink_img);
+//     result_name_e.text(drink_name)
+    
+//     search_results_row_e.append(row_result_e);
+//     row_result_e.append(result_name_e, result_div_e);
+//     result_div_e.append(result_img_e) // result_small_div_e
+//     result_small_div_e.append(result_h6_e)
+// }
+
+function search_results(name, img, id) {
     var row_result_e = $("<div>"); // <div>
     var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
     var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
@@ -318,19 +343,18 @@ function drink_search_results(drink_name, drink_img, drink_id) {
     var result_h6_e = $("<h6>"); // <div>
     
     row_result_e.attr("style", "width: 400px;")
-    row_result_e.attr("id", drink_id)
-    row_result_e.attr("class", "d_results_container")
+    row_result_e.attr("id", id)
+    row_result_e.attr("class", "results_container")
     result_name_e.attr("class", "uk-card uk-card-default uk-card-body");
     result_div_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline uk-margin");
-    result_img_e.attr("src", drink_img);
-    result_name_e.text(drink_name)
+    result_img_e.attr("src", img);
+    result_name_e.text(name)
     
     search_results_row_e.append(row_result_e);
     row_result_e.append(result_name_e, result_div_e);
     result_div_e.append(result_img_e) // result_small_div_e
     result_small_div_e.append(result_h6_e)
 }
-
 
 function change_to_meal_page() {
     window.open('meals.html', '_self');
@@ -344,22 +368,49 @@ function change_to_results_page() {
     window.open('results.html', '_self');
 }
 
-$(document).on('click', '.m_results_container' , function(event){
-    var final_meal_id = $(this).attr("id")
-    console.log(final_meal_id)
-    window.final_meal_id = final_meal_id;
-    window.open('drinks.html?meal_id=' + final_meal_id, '_self');
+// $(document).on('click', '.results_container' , function(event){
+//     var final_meal_id = $(this).attr("id")
+//     console.log(final_meal_id)
+//     window.final_meal_id = final_meal_id;
+//     window.open('drinks.html?meal_id=' + final_meal_id, '_self');
     
 
-})
+// })
 
-$(document).on('click', '.d_results_container' , function(event){
-    var final_drink_id = $(this).attr("id")
-    console.log(final_drink_id)
-    var params = new URLSearchParams(window.location.search.slice(1));
-    var final_meal_id = params.get("meal_id");
-    console.log(final_meal_id)
-    window.open('results.html?meal_id=' + final_meal_id + '&drink_id=' + final_drink_id, '_self')
+// $(document).on('click', '.results_container' , function(event){
+//     var final_drink_id = $(this).attr("id")
+//     console.log(final_drink_id)
+//     var params = new URLSearchParams(window.location.search.slice(1));
+//     var final_meal_id = params.get("meal_id");
+//     console.log(final_meal_id)
+//     window.open('results.html?meal_id=' + final_meal_id + '&drink_id=' + final_drink_id, '_self')
+
+// })
+
+$(document).on('click', '.results_container' , function(event){
+    // if ($(document).URL.contains("meals.html") ) {
+
+    if (window.location.href.indexOf("meals") > -1) {
+        // alert("your url contains the name franky");
+        // }
+        //Code here
+        var final_meal = $(this)
+        console.log(final_meal)
+        var final_meal_id = $(this).attr("id")
+        console.log(final_meal_id)
+        // window.final_meal_id = final_meal_id;
+        window.open('drinks.html?meal_id=' + final_meal_id, '_self');
+    }
+    else if (window.location.href.indexOf("drinks") > -1) {
+        //Code here
+        var final_drink_id = $(this).attr("id")
+        console.log(final_drink_id)
+        var params = new URLSearchParams(window.location.search.slice(1));
+        var final_meal_id = params.get("meal_id");
+        console.log(final_meal_id)
+        window.open('results.html?meal_id=' + final_meal_id + '&drink_id=' + final_drink_id, '_self')
+    }
+    
 
 })
 
