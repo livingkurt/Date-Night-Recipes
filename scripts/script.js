@@ -194,11 +194,39 @@ function ingredient_d_api_call(drink_search) {
     }) 
 }
 
+function ingredient_d_api_call(drink_search) {
+    search_results_row_e.empty();
+    var drink_ingredient_query_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
+    $.ajax({url: drink_ingredient_query_url,method: "GET"}).then(function(response) {
+        // Assign Variables to Request
+        var array_len = response.drinks.length;
+        // var array_len = Object.keys(array_len).length;
+        var drink_ing_array = [];
+        for (var i = 0; i < array_len; i++){
+            // console.log(response.drinks[i].strCategory)
+            var drink_cat = response.drinks[i].strIngredient1
+            drink_ing_array.push(drink_cat.toLowerCase())
+        }
+        var drink_ingredients = drink_ing_array;
+        if (drink_ingredients.indexOf(drink_search) === "-1" || drink_ingredients.indexOf(drink_search) === -1) {
+            var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
+            drink_api_call(drink_search_query_url);
+        }
+        else {
+            var drink_filter_query_url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink_search;
+            // var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
+            drink_api_call(drink_filter_query_url);
+            // drink_search_api_call(drink_search_query_url);
+            
 
-function drink_search_api_call(drink_search) {
-    // console.log(drink_search)
-    // console.log("hello")
-    var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
+        }
+        
+
+    }) 
+}
+
+function drink_api_call(drink_search_query_url) {
+    // var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
     $.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
         // Assign Variables to Request
         var array_len = response.drinks.length;
@@ -213,7 +241,8 @@ function drink_search_api_call(drink_search) {
             var drink_img = response.drinks[i].strDrinkThumb;
             var drink_id = response.drinks[i].idDrink;
             console.log(drink_id)
-            drink_search_results(drink_name, drink_img, drink_name_id, drink_id);
+            // drink_search_results(drink_name, drink_img, drink_name_id, drink_id);
+            drink_search_results(drink_name, drink_img, drink_id);
         }
         
         
@@ -222,36 +251,64 @@ function drink_search_api_call(drink_search) {
     // change_to_results_page();
 } 
 
-function drink_filter_api_call(drink_search) {
-    // console.log("goodbye")
-    var drink_filter_query_url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink_search;
-    $.ajax({url: drink_filter_query_url,method: "GET"}).then(function(response) {
-        // Assign Variables to Request
-        var array_len = response.drinks.length;
-        // var array_len = Object.keys(array_len).length;
-        // console.log(array_len)
-        for (var i = 0; i < array_len; i++){
-            // console.log(response.drinks[i])
-            var drink_name = response.drinks[i].strDrink;
-            var drink_name_id = drink_name.replace(/[^a-zA-Z ]/g, "")
-            var drink_name_id = drink_name_id.split(' ').join('_')
-            console.log(drink_name_id)
-            var drink_img = response.drinks[i].strDrinkThumb;
-            var drink_id = response.drinks[i].idDrink;
-            console.log(drink_id)
-            drink_search_results(drink_name, drink_img, drink_name_id, drink_id);
 
-        }
-        drink_search_api_call(drink_search);
+// function drink_search_api_call(drink_search) {
+//     // console.log(drink_search)
+//     // console.log("hello")
+//     var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
+//     $.ajax({url: drink_search_query_url,method: "GET"}).then(function(response) {
+//         // Assign Variables to Request
+//         var array_len = response.drinks.length;
         
-    })  
-    // change_to_results_page();
-}
+//         // var array_len = Object.keys(array_len).length;
+//         for (var i = 0; i < array_len; i++){
+//             // console.log(response.drinks[i])
+//             var drink_name = response.drinks[i].strDrink;
+//             var drink_name_id = drink_name.replace(/[^a-zA-Z ]/g, "")
+//             var drink_name_id = drink_name_id.split(' ').join('_')
+//             console.log(drink_name_id)
+//             var drink_img = response.drinks[i].strDrinkThumb;
+//             var drink_id = response.drinks[i].idDrink;
+//             console.log(drink_id)
+//             drink_search_results(drink_name, drink_img, drink_name_id, drink_id);
+//         }
+        
+        
+//     }) 
+    
+//     // change_to_results_page();
+// } 
+
+// function drink_filter_api_call(drink_search) {
+//     // console.log("goodbye")
+//     var drink_filter_query_url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink_search;
+//     $.ajax({url: drink_filter_query_url,method: "GET"}).then(function(response) {
+//         // Assign Variables to Request
+//         var array_len = response.drinks.length;
+//         // var array_len = Object.keys(array_len).length;
+//         // console.log(array_len)
+//         for (var i = 0; i < array_len; i++){
+//             // console.log(response.drinks[i])
+//             var drink_name = response.drinks[i].strDrink;
+//             var drink_name_id = drink_name.replace(/[^a-zA-Z ]/g, "")
+//             var drink_name_id = drink_name_id.split(' ').join('_')
+//             console.log(drink_name_id)
+//             var drink_img = response.drinks[i].strDrinkThumb;
+//             var drink_id = response.drinks[i].idDrink;
+//             console.log(drink_id)
+//             drink_search_results(drink_name, drink_img, drink_name_id, drink_id);
+
+//         }
+//         drink_search_api_call(drink_search);
+        
+//     })  
+//     // change_to_results_page();
+// }
 
 
 
 
-function drink_search_results(drink_name, drink_img, drink_name_id, drink_id) {
+function drink_search_results(drink_name, drink_img, drink_id) {
     var row_result_e = $("<div>"); // <div>
     var result_name_e = $("<div>");// <div class="uk-card uk-card-default uk-card-body">Meal Name</div>
     var result_div_e = $("<div>"); // <div class="uk-card uk-card-default uk-card-body uk-inline uk-margin">
