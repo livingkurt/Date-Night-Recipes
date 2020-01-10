@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html>
+
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -10,13 +11,22 @@
     <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="scripts/uikit.min.js"></script>
     <script src="scripts/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href=css/style.css>
+<!--     <link rel="stylesheet" href=css/style.css>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
 <body style="background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover; height: 100%;">
+ -->
+    <link rel="stylesheet" href=css/style.css> 
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="bg"><img src="images/veggies.jpg" alt="veggies"></div>
+
     <!-- Webpage container  -->
-    <div class="uk-container" style="height: 100%; width: 100%;">
+    <div class="uk-container">
         <!-- This is what needs to be added to class of above container to get wallpaper. However I cant figure out how to get it to take up the whole page. Image does not matter just trying to get HTML right
             uk-background-contain " style="background-image: url(images/wine-wallpaper.jpg);"> -->
 
@@ -26,10 +36,17 @@
                 <div class="uk-navbar-center">
                     <div>
 
-                        <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark uk-position-z-index">
+
+<!--                         <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark uk-position-z-index">
                             <li class="uk-active"><a href="index.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="home"style="margin: auto; width: max-content;">Home</a></li>
                             <li class="uk-active uk-dropdown-nav uk-dropdown-grid" ><a href="meals.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="meals" style="margin: auto; width: max-content">Meals</a></li>
                             <div uk-dropdown="pos: bottom-center" class="nav_bar_z_index uk-position-z-index dropdown_css">
+                              -->
+                        <ul class="uk-navbar-nav uk-dropdown-navbar">
+                            <li class="uk-active"><a href="index.html" id="home" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
+                            <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                                         <div>
@@ -37,14 +54,12 @@
                                                 <li><a href="meals.html?meal=Beef">Beef</a></li>
                                                 <li><a href="meals.html?meal=Breakfast">Breakfast</a></li>
                                                 <li><a href="meals.html?meal=Chicken">Chicken</a></li>
-                                                <li><a href="meals.html?meal=Dessert">Dessert</a></li>
                                                 <li><a href="meals.html?meal=Goat">Goat</a></li>
                                             </ul>
                                         </div>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
                                                 <li><a href="meals.html?meal=Lamb">Lamb</a></li>
-                                                <li><a href="meals.html?meal=Miscellaneous">Miscellaneous</a></li>
                                                 <li><a href="meals.html?meal=Pasta">Pasta</a></li>
                                                 <li><a href="meals.html?meal=Pork">Pork</a></li>
                                                 <li><a href="meals.html?meal=Seafood">Seafood</a></li>
@@ -52,8 +67,6 @@
                                         </div>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="meals.html?meal=Side">Side</a></li>
-                                                <li><a href="meals.html?meal=Starter">Starter</a></li>
                                                 <li><a href="meals.html?meal=Vegan">Vegan</a></li>
                                                 <li><a href="meals.html?meal=Vegetarian">Vegetarian</a></li>
                                             </ul>
@@ -62,65 +75,78 @@
                                 </ul>
                             </div>
                             <!-- <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="desserts.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Desserts</a></li> -->
-                            <li class="uk-active uk-position-z-index uk-dropdown-nav" uk-dropdown-grid><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks" style="margin: auto; width: max-content">Drinks</a></li>
-                            <div  class="dropdown_css"uk-dropdown="pos: bottom-center" >
-                                <ul class="uk-nav uk-dropdown-nav uk-width-large">
+
+<!--                             <li class="uk-active uk-position-z-index uk-dropdown-nav" uk-dropdown-grid><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks" style="margin: auto; width: max-content">Drinks</a></li>
+                            <div  class="dropdown_css"uk-dropdown="pos: bottom-center" > -->
+
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" id="drinks"  class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Drinks</a></li>
+                            <div uk-dropdown="pos: bottom-center"class="dropdown_css>
+
+                                <ul class="uk-nav uk-dropdown-nav uk-width-large" >
 
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li class="drinkNav"><a href="drinks.html?drink=Rum">Rum</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Gin">Gin</a></liclass="drinkNav">
-                                                <li class="drinkNav"><a href="drinks.html?drink=Scotch">Scotch</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Brandy">Brandy</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Tea">Tea</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Champagne">Champagne</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
+                                                <li><a href="drinks.html?drink=Rum">Rum</a></li>
+                                                <li><a href="drinks.html?drink=Gin">Gin</a></li>
+                                                <li><a href="drinks.html?drink=Scotch">Scotch</a></li>
+                                                <li><a href="drinks.html?drink=Brandy">Brandy</a></li>
+                                                <li><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
+                                                <li><a href="drinks.html?drink=Tea">Tea</a></li>
+                                                <li><a href="drinks.html?drink=Champagne">Champagne</a></li>
+                                                <li><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
                                             </ul>
                                         </div>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li class="drinkNav"><a href="drinks.html?drink=Tequila">Tequila</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Vodka">Vodka</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Bitters">Bitters</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Whisky">Whiskey</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Grenadine">Grenadine</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Port">Port</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Sherry">Sherry</a></li>
+                                                <li><a href="drinks.html?drink=Tequila">Tequila</a></li>
+                                                <li><a href="drinks.html?drink=Vodka">Vodka</a></li>
+                                                <li><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
+                                                <li><a href="drinks.html?drink=Whisky">Whiskey</a></li>
+                                                <li><a href="drinks.html?drink=Port">Port</a></li>
+                                                <li><a href="drinks.html?drink=Sherry">Sherry</a></li>
                                             </ul>
                                         </div>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li class="drinkNav"><a href="drinks.html?drink=Cognac">Cognac</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Milk">Milk</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Ale">Ale</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Cider">Cider</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Sprite">Sprite</a></li>
-                                                <li class="drinkNav"><a href="drinks.html?drink=Everclear">Everclear</a></li>
+                                                <li><a href="drinks.html?drink=Milk">Milk</a></li>
+                                                <li><a href="drinks.html?drink=Ale">Ale</a></li>
+                                                <li><a href="drinks.html?drink=Cider">Cider</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </ul>
                             </div>
 
-                            <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white z-index_lower" id="results" style="margin: auto; width: max-content">Results</a></li>
+
+<!--                             <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white z-index_lower" id="results" style="margin: auto; width: max-content">Results</a></li> -->
+
+                            <li class="uk-active"><a href="results.html" id="results"class="navo uk-text-center p-3 mb-2 bg-dark text-white">Results</a></li>
+
                         </ul>
                     </div>
             </nav>
         </header>
         <!-- Content Container -->
 
-        <div class="all_headers z_index_lower">
+<!--         <div class="all_headers z_index_lower">
             <h1 class="uk-text-center p-3 mb-2 text-white uk-border-rounded z_index_lower background" style="width: max-content;">Date Night</h1>
             <!-- uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded z_index_lower -->
             <h3 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded z_index_lower background" style="width: max-content;">Get started on your date menu</h3>
             <button id="ready_b" class="uk-button uk-button-danger uk-align-center uk-border-rounded z_index_lower" style="background-color: #c20018;">Click Here to Start!</button>
 
-        </div>
+        </div> -->
         <!-- Spacing Divider -->
 
+
+      <div class="all_headers z_index_lower">
+            <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded background">Date Night</h1>
+            <h3 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded background">Get started on your date menu</h3>
+            <button id="ready_b" class="red uk-button uk-button-danger uk-align-center uk-border-rounded background">Click Here to Start!</button>
+
+        </div>
+      
+    
 
 
 
