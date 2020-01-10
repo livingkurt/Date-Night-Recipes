@@ -1,3 +1,4 @@
+
 #bg {
     position: fixed;
     top: -50%;
@@ -20,3 +21,65 @@
   body {
       background-color: transparent !important;
   }
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+head{
+    height: 100%;
+    width: 100%;
+}
+
+.uk-background-cover{
+    min-height: 100%; 
+    height: fit-content; 
+    width: 100%;
+}
+
+.uk-container{
+    height: 100%; 
+    width: 100%;
+}
+
+.navo{
+    margin: auto; 
+    width: max-content;
+}
+
+.box{
+    margin: auto; 
+    width: max-content;
+}
+
+.red{
+    background-color: #c20018;
+}
+
+.uk-background-fixed{
+    min-height: 100%; 
+    height: fit-content; 
+    width: 100%;
+    
+}
+
+.w-box{
+    width: 77px;
+}
+
+.big-box{
+    margin: auto; 
+    width: max-content;
+    width: 522px;  
+}
+
+.w{
+    width: 100%;
+}
+
+.w1{
+    width: 100%; 
+    margin-top: 15px;
+}
+

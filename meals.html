@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html style="height:100vh; width: 100%;" lang="en">
+<html lang="en">
 
-<head style="height: 100%;width: 100%;">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,9 +13,10 @@
 </head>
 <div id="bg"><img src="images/veggies.jpg" alt="veggies"></div>
 
-<!-- <body class="uk-background-fixed" style="min-height: 100%; height: fit-content; width: 100%; background-image: url(images/veggies.jpg);"> -->
+
+<body class="uk-background-fixed" style="background-image: url(images/veggies.jpg);">
     <!-- Webpage container  -->
-    <div class="uk-container" style="height: fit-content; width: 100%;">
+    <div class="uk-container">
         <!-- This is what needs to be added to class of above container to get wallpaper. However I cant figure out how to get it to take up the whole page. Image does not matter just trying to get HTML right
             uk-background-contain " style="background-image: url(images/wine-wallpaper.jpg);"> -->
 
@@ -26,8 +27,8 @@
                     <div>
 
                         <ul class="uk-navbar-nav uk-dropdown-navbar">
-                            <li class="uk-active"><a href="index.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Home</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Meals</a></li>
+                            <li class="uk-active"><a href="index.html" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
@@ -95,7 +96,7 @@
                                 </ul>
                             </div>
 
-                            <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Results</a></li>
+                            <li class="uk-active"><a href="results.html" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Results</a></li>
                         </ul>
                     </div>
             </nav>
@@ -111,19 +112,19 @@
             </div>
             <!-- row 1 Title  -->
             <row>
-                <h1 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;">Meals</h1>
+                <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Meals</h1>
 
             </row>
 
             <row>
-                <h5 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;">Search Food Recipes For The Perfect Date</h5>
+                <h5 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Search Food Recipes For The Perfect Date</h5>
             </row>
             <!-- recent searches carossel section -->
             <row>
 
-                <form id="search_f" class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded" style="margin: auto; width: max-content;">
+                <form id="search_f" class="box uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
                     <span uk-search-icon></span>
-                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;" type="search" placeholder="Main ingredient">
+                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;" type="search" placeholder="Search">
                 </form>
             </row>
 
