@@ -115,10 +115,12 @@ function drink_api_call(drink_search_query_url) {
     $.ajax({ url: drink_search_query_url, method: "GET" }).then(function (response) {
         // Get the length of the search
         var array_len = response.drinks.length;
+        console.log(array_len)
         // Loop to get all of the information for the search results based on how many items there are
         for (var i = 0; i < array_len; i++) {
             // Assign The Drink Name to Variable
             var drink_name = response.drinks[i].strDrink;
+            console.log(drink_name)
             // Assign The Drink Image to Variable
             var drink_img = response.drinks[i].strDrinkThumb;
             // Assign The Drink ID to Variable
@@ -140,11 +142,16 @@ function search_results(name, img, id) {
 
     var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
     console.log(height)
-    if (height >= 2022){
+    if (height > 1912){
         $("body").css("height", "unset")
     }
-    else if (height < 1500){
-        $("body").css("height", "100%")
+    else if (height < 1912){
+        $("body").css("height: unset; background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;")
+        $("html").css("height", "100%")
+    }
+    else if (height <= 1486){
+        $("body").css("height: unset; background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;")
+        $("html").css("height", "100%")
     }
     // Creates a container div
     var row_result_e = $("<div>");
@@ -234,6 +241,8 @@ search_f_e.on('submit', function (event) {
         ingredient_d_api_call(drink_search);
     }
 })
+
+
 
 
 

@@ -39,7 +39,7 @@ body, h1, h3, h4, h5, #home, #meals, #drinks, #results{
 }
 
 .background {
-    opacity: .9;
+    /* opacity: .9; */
     border-radius: 20px;
     padding: 5px 10px 0px 10px ;
     background-color: #343a40;
