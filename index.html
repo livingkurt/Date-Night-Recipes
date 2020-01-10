@@ -15,22 +15,24 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Adding a div here for the background image allowed us to format the background with CSS attributes while still using the UIKit formatting for other elements. The background  -->
+    <!-- Adding a div here for the background image allowed us to format the background with CSS attributes while still using the UIKit formatting for other elements. The background is responsive and fills the screen. -->
     <div id="bg"><img src="images/veggies.jpg" alt="veggies"></div>
 <body>
     <div class="uk-container">
         <header>
+            <!-- UIKit Navbar formatting -->
             <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
                 <div class="uk-navbar-center">
+                    <!-- Navbar -->
                     <div>
                         <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
                             <li class="uk-active"><a href="index.html" id="home" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
                             <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
                             <div uk-dropdown="pos: bottom-center" class="dropdown_css">
-
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                                         <div>
+                                            <!-- Navbar meal items listed with the href so the search term populates into the html. -->
                                             <ul class="uk-nav uk-dropdown-nav" >
                                                 <li><a href="meals.html?meal=Beef">Beef</a></li>
                                                 <li><a href="meals.html?meal=Breakfast">Breakfast</a></li>
