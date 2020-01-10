@@ -130,6 +130,8 @@ function drink_api_call(drink_search_query_url) {
 
 // Creates the elements and attributes them from the search results
 function search_results(name, img, id) {
+
+    $("body").css("height", "unset")
     // Creates a container div
     var row_result_e = $("<div>");
     // Changes Styling

@@ -1,38 +1,35 @@
 <!DOCTYPE html>
-<html style="height:100vh; width: 100%;" lang="en">
+<html>
 
-<head style="height: 100%;width: 100%;">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Date Night</title>
+    <title>Date Night Recipes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href=css/style.css> <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="scripts/uikit.min.js"></script>
     <script src="scripts/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href=css/style.css> 
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
-<body class="uk-background-fixed"
-    style="min-height: 100%; height: fit-content; width: 100%; background-image: url(images/veggies.jpg);">
+<body style="background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover; height: 100%;>
     <!-- Webpage container  -->
     <div class="uk-container" style="height: fit-content; width: 100%;">
         <!-- This is what needs to be added to class of above container to get wallpaper. However I cant figure out how to get it to take up the whole page. Image does not matter just trying to get HTML right
             uk-background-contain " style="background-image: url(images/wine-wallpaper.jpg);"> -->
 
         <!-- nav container -->
-        <header>
+        <header class="nav_bar_z_index">
             <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
                 <div class="uk-navbar-center">
                     <div>
 
-                        <ul class="uk-navbar-nav uk-dropdown-navbar">
-                            <li class="uk-active"><a href="index.html"
-                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
-                                    style="margin: auto; width: max-content">Home</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html"
-                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
-                                    style="margin: auto; width: max-content">Meals</a></li>
+                        <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
+                            <li class="uk-active"><a href="index.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="home" style="margin: auto; width: max-content">Home</a></li>
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="meals" style="margin: auto; width: max-content">Meals</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
@@ -65,59 +62,51 @@
                                     </div>
                                 </ul>
                             </div>
-
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html"
-                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
-                                    style="margin: auto; width: max-content">Drinks</a></li>
-
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="desserts.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Desserts</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Drinks</a></li>
-
+                            <!-- <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="desserts.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Desserts</a></li> -->
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks" style="margin: auto; width: max-content">Drinks</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
 
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Rum">Rum</a></li>
-                                                <li><a href="drinks.html?drink=Gin">Gin</a></li>
-                                                <li><a href="drinks.html?drink=Scotch">Scotch</a></li>
-                                                <li><a href="drinks.html?drink=Brandy">Brandy</a></li>
-                                                <li><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
-                                                <li><a href="drinks.html?drink=Tea">Tea</a></li>
-                                                <li><a href="drinks.html?drink=Champagne">Champagne</a></li>
-                                                <li><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Rum">Rum</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Gin">Gin</a></liclass="drinkNav">
+                                                <li class="drinkNav"><a href="drinks.html?drink=Scotch">Scotch</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Brandy">Brandy</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Tea">Tea</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Champagne">Champagne</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
                                             </ul>
                                         </div>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Tequila">Tequila</a></li>
-                                                <li><a href="drinks.html?drink=Vodka">Vodka</a></li>
-                                                <li><a href="drinks.html?drink=Bitters">Bitters</a></li>
-                                                <li><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
-                                                <li><a href="drinks.html?drink=Whisky">Whiskey</a></li>
-                                                <li><a href="drinks.html?drink=Grenadine">Grenadine</a></li>
-                                                <li><a href="drinks.html?drink=Port">Port</a></li>
-                                                <li><a href="drinks.html?drink=Sherry">Sherry</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Tequila">Tequila</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Vodka">Vodka</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Bitters">Bitters</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Whisky">Whiskey</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Grenadine">Grenadine</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Port">Port</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Sherry">Sherry</a></li>
                                             </ul>
                                         </div>
                                         <div>
                                             <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Cognac">Cognac</a></li>
-                                                <li><a href="drinks.html?drink=Milk">Milk</a></li>
-                                                <li><a href="drinks.html?drink=Ale">Ale</a></li>
-                                                <li><a href="drinks.html?drink=Cider">Cider</a></li>
-                                                <li><a href="drinks.html?drink=Sprite">Sprite</a></li>
-                                                <li><a href="drinks.html?drink=Everclear">Everclear</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Cognac">Cognac</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Milk">Milk</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Ale">Ale</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Cider">Cider</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Sprite">Sprite</a></li>
+                                                <li class="drinkNav"><a href="drinks.html?drink=Everclear">Everclear</a></li>
                                             </ul>
                                         </div>
                                     </div>
                                 </ul>
                             </div>
 
-                            <li class="uk-active"><a href="results.html"
-                                    class="uk-text-center p-3 mb-2 bg-dark text-white"
-                                    style="margin: auto; width: max-content">Results</a></li>
+                            <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="results" style="margin: auto; width: max-content">Results</a></li>
                         </ul>
                     </div>
             </nav>
@@ -146,10 +135,10 @@
             <row>
 
 
-                <form id="search_f" class="uk-search uk-search-default uk-align-center uk-child-width-responsive uk-text-center p-3 mb-2 bg-danger text-white uk-border-rounded" style="margin: auto; width: max-content;">
-                    <span uk-search-icon style ="width: 77px;"></span>
-                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;width: 522px;" type="search" placeholder="Search">
-
+                <form id="search_f" class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded" style="margin: auto; width: max-content;">
+                    <span uk-search-icon></span>
+                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;" type="search" placeholder="Drink or Ingredient">
+                </form>
 <!--                 <form id="search_f" class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded"style="margin: auto; width: max-content;">
                     <span uk-search-icon></span>
                     <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"style="margin: auto; width: max-content;" type="search" placeholder="Main ingredient">
@@ -177,6 +166,14 @@
         </footer>
 
     </div>
+    <!-- <div class="all_headers">
+        <h1 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="width: max-content;">Drinks</h1>
+        <h3 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="width: max-content;">Search Drink Recipes For The Perfect Date</h3>
+        <form id="search_f" class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded" style="margin: auto; width: max-content;">
+            <span uk-search-icon></span>
+            <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;" type="search" placeholder="Main ingredient">
+        </form>
+    </div> -->
 
 
 

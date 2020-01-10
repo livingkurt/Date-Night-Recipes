@@ -1,32 +1,34 @@
 <!DOCTYPE html>
-<html style="height: 100%; width: 100%;" lang="en">
+<html>
 
-<head style="height: 100%;width: 100%;">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Date Night</title>
+    <title>Date Night Recipes</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href=css/style.css> <link rel="stylesheet" href="css/uikit.min.css" />
+    <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="scripts/uikit.min.js"></script>
     <script src="scripts/uikit-icons.min.js"></script>
+    <link rel="stylesheet" href=css/style.css> 
+    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
 
-<body class="uk-background-cover" style="min-height: 100%; height: fit-content; width: 100%; background-image: url(images/veggies.jpg);">
+<body style="background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover; height: 100%;>
     <!-- Webpage container  -->
-    <div class="uk-container" style="height: 100%; width: 100%;">
+    <div class="uk-container">
         <!-- This is what needs to be added to class of above container to get wallpaper. However I cant figure out how to get it to take up the whole page. Image does not matter just trying to get HTML right
             uk-background-contain " style="background-image: url(images/wine-wallpaper.jpg);"> -->
 
         <!-- nav container -->
         <header>
-            <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
+            <nav class="uk-navbar-container uk-navbar-transparent uk-navbar ">
                 <div class="uk-navbar-center">
                     <div>
 
-                        <ul class="uk-navbar-nav uk-dropdown-navbar">
-                            <li class="uk-active"><a href="index.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Home</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Meals</a></li>
+                            <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark">
+                            <li class="uk-active"><a href="index.html" class="uk-text-center p-3 mb-2 bg-dark text-white items" id="home" style="margin: auto; width: max-content">Home</a></li>
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="meals" style="margin: auto; width: max-content">Meals</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
                                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
@@ -59,8 +61,8 @@
                                     </div>
                                 </ul>
                             </div>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="desserts.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Desserts</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Drinks</a></li>
+                            <!-- <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="desserts.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Desserts</a></li> -->
+                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks" style="margin: auto; width: max-content">Drinks</a></li>
                             <div uk-dropdown="pos: bottom-center">
                                 <ul class="uk-nav uk-dropdown-nav uk-width-large">
 
@@ -103,7 +105,7 @@
                                 </ul>
                             </div>
 
-                            <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white" style="margin: auto; width: max-content">Results</a></li>
+                            <li class="uk-active"><a href="results.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="results" style="margin: auto; width: max-content">Results</a></li>
                         </ul>
                     </div>
             </nav>
@@ -121,9 +123,9 @@
             <!-- row 1 Title  -->
             <row>
                 <h1 class="uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" style="margin: auto; width: max-content;">Results</h1>
-                <div class="uk-section-muted">
+                <div>
                     <div class="uk-container">
-                        <div id="results_container"class=" uk-grid uk-child-width-expand@m" uk-grid>
+                        <div id="results_container" uk-grid>
                             <div id="meal_recipe_d">
                                 <!-- <div id="meal_recipe_name_container"class="uk-card uk-card-default uk-card-body uk-text-center"> -->
                                 <h4 id="meal_recipe_name_d">Meal Name</h4  id="meal_recipe_d" >
@@ -133,23 +135,24 @@
                                     <label id="meal_ingredients_header"class="uk-display-block" for="">Ingredients</label>
                                 </div>
                                 <div id="meal_instuctions_container"class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%; margin-top: 15px;">
-                                    <label id="meal_instructions_header"class="uk-display-block" for="">Instructions</label>
+                                    <!-- <label id="meal_instructions_header"class="uk-display-block" for="">Instructions</label> -->
                                 </div>
                             </div>
-                                </div>
-                            </div>
-                            <div id="drink_recipe_d" style="margin-top: 30px">
+    
+                            <div id="drink_recipe_d" style="margin-top: 30px; width: 100%;">
                                 <div id="drink_recipe_name_container"class="uk-card uk-card-default uk-card-body uk-text-center">
                                     <h4 id="drink_recipe_name_d">Drink Name</h4">
                                 </div>
                                 <div id="drink_ingredient_container"class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%;">
                                     <img id="drink_recipe_img"src="https://via.placeholder.com/728x320.png" alt="Placeholder">
-                                    <!-- <label id="drink_ingredients_header"class="uk-display-block" for="">Ingredients</label> -->
+                                    <label id="drink_ingredients_header"class="uk-display-block" for="">Ingredients</label>
                                 </div>
                                 <div id="drink_instuctions_container"class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%; margin-top: 15px;">
                                     <!-- <label id="drink_instructions_header"class="uk-display-block" for="">Instructions</label> -->
                                 </div>
                             </div>
+
+                        </div>
                         </div>
 
                     </div>

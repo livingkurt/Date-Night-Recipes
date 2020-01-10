@@ -5,6 +5,8 @@ var params = new URLSearchParams(window.location.search.slice(1));
         console.log(meal_id, drink_id);
     }
 
+$("body").css("height", "unset")
+
 var m_route = "meals"
 var m_modifier = "meal"
 var m_name = "strMeal"
@@ -40,7 +42,7 @@ function get_results(route, name, img, search_query_url, modifier) {
         // Assign Element to Variable
         var ingredient_container_e = $("#" + modifier + "_ingredient_container");
 
-        // ingredient_container_e.attr("style", "margin-top: 20px")
+        ingredient_container_e.attr("style", "opacity: .9; width: 100%; border-radius: 20px;")
         // Assign Element to Variable
         var ingredients_header_e = $("#" + modifier + "_ingredients_header");
         // Make the Label Bold
@@ -48,7 +50,7 @@ function get_results(route, name, img, search_query_url, modifier) {
         // Create a Unordered List
         var instructions_container_e = $("#" + modifier + "_instuctions_container")
         instructions_container_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
-        // instructions_container_e.attr("style", "uk-card uk-card-default uk-card-body uk-inline uk-margin")
+        instructions_container_e.attr("style", "border-radius: 20px; width: 100%; margin-top: 10px;")
 
         var ingredient_list_e= $("<ul>");
         
