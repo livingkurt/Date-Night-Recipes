@@ -1,13 +1,33 @@
+#bg {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: -1;
+}
+#bg img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  min-width: 50%;
+  min-height: 50%;
+}
 
-#background {
+body {
+    background-color: transparent !important;
+/* #background { */
     /* background-image: url("img_tree.gif"); */
     
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+    /* background-repeat: no-repeat;
+    background-attachment: fixed; */
     /* background-color: black; */
     /* background: url("images/veggies.jpg")!important;  */
     /* background: url("images/veggies.jpg")!important;  */
-    background-image: url(../images/veggies.jpg);
+    /* background-image: url(../images/veggies.jpg); */
     /* min-height: 100% */
     /* height: fit-content; */
     /* width: 100%; */
@@ -28,9 +48,6 @@ body, h1, h3, h4, h5, #home, #meals, #drinks, #results{
 }
 
 
-.uk-container {
-    /* font-family: 'Shadows Into Light', cursive; */
-}
 
 .bg-dark {
     /* opacity: .9; */
@@ -107,27 +124,7 @@ background-size: cover;
   /* style=";   background-image: url("images/veggies.jpg") */
 
 
-#bg {
-    position: fixed;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: -1;
-  }
-  #bg img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin: auto;
-    min-width: 50%;
-    min-height: 50%;
-  }
 
-  body {
-      background-color: transparent !important;
   }
 
 html{
@@ -140,11 +137,11 @@ head{
     width: 100%;
 }
 
-.uk-background-cover{
+/* .uk-background-cover{
     min-height: 100%; 
     height: fit-content; 
     width: 100%;
-}
+} */
 
 .uk-container{
     height: 100%; 
