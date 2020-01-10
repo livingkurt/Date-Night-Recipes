@@ -1,4 +1,4 @@
-var search_i_d_e = $("#search_i_d");
+var search_i_d_e = $("#search_i");
 
 
 console.log(window.location.search)

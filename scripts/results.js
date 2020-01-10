@@ -5,6 +5,8 @@ var params = new URLSearchParams(window.location.search.slice(1));
         console.log(meal_id, drink_id);
     }
 
+
+
 var m_route = "meals"
 var m_modifier = "meal"
 var m_name = "strMeal"
@@ -23,6 +25,7 @@ get_results(d_route, d_name, d_img, d_search_query_url, d_modifier);
 
 
 function get_results(route, name, img, search_query_url, modifier) {
+    $("body").css("height", "unset")
     
     $.ajax({url: search_query_url,method: "GET"}).then(function(response) {
         // Assign Base Response to a variable
@@ -40,19 +43,19 @@ function get_results(route, name, img, search_query_url, modifier) {
         // Assign Element to Variable
         var ingredient_container_e = $("#" + modifier + "_ingredient_container");
 
-        // ingredient_container_e.attr("style", "margin-top: 20px")
+        ingredient_container_e.attr("style", "opacity: .9; width: 100%; border-radius: 20px;  font-weight: bold; color: black;")
         // Assign Element to Variable
         var ingredients_header_e = $("#" + modifier + "_ingredients_header");
         // Make the Label Bold
-        ingredients_header_e.attr("style", "font-weight: bold;")
+        ingredients_header_e.attr("style", "font-weight: bold; color: black;")
         // Create a Unordered List
         var instructions_container_e = $("#" + modifier + "_instuctions_container")
         instructions_container_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
-        // instructions_container_e.attr("style", "uk-card uk-card-default uk-card-body uk-inline uk-margin")
+        instructions_container_e.attr("style", "border-radius: 20px; width: 100%; margin-top: 10px; opacity: .9;  margin-bottom: 50px;  font-weight: bold; color: black;;")
 
         var ingredient_list_e= $("<ul>");
         
-        // Place Ingredients in Elements
+        // Place Ingredients in Elements+
         place_ingredients(recipe, ingredient_list_e);
         // Create a label for the Instrucitons header
         var instructions_label_e = $("<label>");
@@ -104,7 +107,7 @@ function place_image(recipe, img, modifier) {
     // Assign width to img
     recipe_img_e.attr("width", "400px")
     // Assign CSS to img
-    recipe_img_e.attr("style", "float: right; margin: 20px;")
+    recipe_img_e.attr("style", "float: right; margin: 20px; border-radius: 20px;")
 
 }
 
@@ -140,6 +143,9 @@ function place_ingredients(recipe, ingredient_list_e) {
 function create_instructions(recipe, instructions_list_e, ){
     // Assign Instruction to Variable
     var instructions = recipe.strInstructions
+    if (instructions === null){
+        instructions = "No Instructions Available"
+    }
     // Split instructions at the period which adds it all to an array
     var instructions_array = instructions.split("."); // .join(".<br/>")
     // Get the instructions length

@@ -1,4 +1,4 @@
-var search_i_m_e = $("#search_i_m");
+var search_i_m_e = $("#search_i");
 
 console.log(window.location.search);
 var searchTerm = window.location.search.slice(1);
