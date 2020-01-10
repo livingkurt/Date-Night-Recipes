@@ -4,7 +4,23 @@ var params = new URLSearchParams(window.location.search.slice(1));
         var drink_id = params.get("drink_id");
         console.log(meal_id, drink_id);
     }
+    console.log(meal_id)
 
+    if (meal_id === undefined) {
+        console.log("is null")
+        $("#results_container").attr("style", "display: none;")
+        var no_results = $("<div>");
+        var results_div = $("#results_results");
+        no_results.text("No Recipes at this Time")
+        no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline box red")
+        no_results.attr("style", "text-align: center; display: flex; border-radius: 20px; font-size: 65px; color: white; margin-top: 241px;")
+        
+        
+        
+        results_div.append(no_results)
+
+
+    }
 
 
 var m_route = "meals"
