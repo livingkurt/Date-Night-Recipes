@@ -111,6 +111,7 @@ function ingredient_d_api_call(drink_search) {
 // Makes API Call for drink and gets search data back
 function drink_api_call(drink_search_query_url) {
     // Ajax Request to search for meals in drinkdb API
+    console.log(drink_search_query_url)
     $.ajax({ url: drink_search_query_url, method: "GET" }).then(function (response) {
         // Get the length of the search
         var array_len = response.drinks.length;
@@ -131,7 +132,20 @@ function drink_api_call(drink_search_query_url) {
 // Creates the elements and attributes them from the search results
 function search_results(name, img, id) {
 
-    $("body").css("height", "unset")
+    
+    var x = "Total Height: " + screen.height;
+    // console.log(x)
+    var body = document.body,
+    html = document.documentElement;
+
+    var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+    console.log(height)
+    if (height >= 2022){
+        $("body").css("height", "unset")
+    }
+    else if (height < 1500){
+        $("body").css("height", "100%")
+    }
     // Creates a container div
     var row_result_e = $("<div>");
     // Changes Styling
@@ -141,6 +155,7 @@ function search_results(name, img, id) {
     // Adds a class to the container div
     row_result_e.attr("class", "results_container")
     // Placesthe container div to a parent div
+    search_results_row_e.attr("style", "margin-bottom: 50px;")
     search_results_row_e.append(row_result_e);
 
     // Creates a div for name

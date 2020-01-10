@@ -12,6 +12,14 @@ var drink_id = params.get("drink_id");
 var drink = params.get("drink");
 var meal_id = params.get("meal_id");
 
+var body = document.body,
+html = document.documentElement;
+
+var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+console.log(height)
+if (height > 2500){
+    $("body").css("height", "unset")
+}
 
 // searchTerm += "&" + drink + "=" + drink_id;
 

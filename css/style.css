@@ -3,8 +3,8 @@
     
     background-repeat: no-repeat;
     background-attachment: fixed;
-    background-color: black;
-    background: url("images/veggies.jpg")!important; 
+    /* background-color: black; */
+    /* background: url("images/veggies.jpg")!important;  */
     /* background: url("images/veggies.jpg")!important;  */
     background-image: url(../images/veggies.jpg);
     /* min-height: 100% */
@@ -32,21 +32,33 @@ body, h1, h3, h4, h5, #home, #meals, #drinks, #results{
 }
 
 .bg-dark {
-    opacity: .9;
+    /* opacity: .9; */
     border-radius: 20px;
     padding: 5px 10px 0px 10px ;
 
 }
 
+.background {
+    opacity: .9;
+    border-radius: 20px;
+    padding: 5px 10px 0px 10px ;
+    background-color: #343a40;
+
+}
+
+.dropdown_css {
+    border-radius: 20px;
+}
+
 .nav_bar_z_index {
-    z-index: 2;
+    /* z-index: 0; */
 }
 
 background-position: center;
 background-size: cover;
 
 .z_index_lower {
-    z-index: 1;
+    /* z-index: 1; */
 }
 
 /* .titles {

@@ -5,7 +5,7 @@ var params = new URLSearchParams(window.location.search.slice(1));
         console.log(meal_id, drink_id);
     }
 
-$("body").css("height", "unset")
+
 
 var m_route = "meals"
 var m_modifier = "meal"
@@ -25,6 +25,7 @@ get_results(d_route, d_name, d_img, d_search_query_url, d_modifier);
 
 
 function get_results(route, name, img, search_query_url, modifier) {
+    $("body").css("height", "unset")
     
     $.ajax({url: search_query_url,method: "GET"}).then(function(response) {
         // Assign Base Response to a variable
@@ -42,15 +43,15 @@ function get_results(route, name, img, search_query_url, modifier) {
         // Assign Element to Variable
         var ingredient_container_e = $("#" + modifier + "_ingredient_container");
 
-        ingredient_container_e.attr("style", "opacity: .9; width: 100%; border-radius: 20px;")
+        ingredient_container_e.attr("style", "opacity: .9; width: 100%; border-radius: 20px;  bold; color: black;")
         // Assign Element to Variable
         var ingredients_header_e = $("#" + modifier + "_ingredients_header");
         // Make the Label Bold
-        ingredients_header_e.attr("style", "font-weight: bold;")
+        ingredients_header_e.attr("style", "font-weight: bold; color: black;")
         // Create a Unordered List
         var instructions_container_e = $("#" + modifier + "_instuctions_container")
         instructions_container_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
-        instructions_container_e.attr("style", "border-radius: 20px; width: 100%; margin-top: 10px;")
+        instructions_container_e.attr("style", "border-radius: 20px; width: 100%; margin-top: 10px; opacity: .9;  margin-bottom: 50px  bold; color: black;;")
 
         var ingredient_list_e= $("<ul>");
         
