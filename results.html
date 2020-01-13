@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,146 +10,145 @@
     <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="scripts/uikit.min.js"></script>
     <script src="scripts/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href=css/style.css> 
+    <link rel="stylesheet" href=css/style.css>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
+
 <body>
-<div id="bg"><img src="images/veggies.jpg" alt="veggies"></div>
-<body>
-    <!-- Webpage container  -->
-    <div class="uk-container">
-        <!-- nav container -->
-        <header>
-            <nav class="uk-navbar-container uk-navbar-transparent uk-navbar ">
-                <div class="uk-navbar-center">
-                    <div>
-                        <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
-                            <li class="uk-active"><a href="index.html" id="home"class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
+    <div id="bg"><img src="" alt="veggies"></div>
 
-                            <div uk-dropdown="pos: bottom-center" class="dropdown_css">
-                                <ul class="uk-nav uk-dropdown-nav uk-width-large">
-                                    <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="meals.html?meal=Beef">Beef</a></li>
-                                                <li><a href="meals.html?meal=Breakfast">Breakfast</a></li>
-                                                <li><a href="meals.html?meal=Chicken">Chicken</a></li>
-                                                <li><a href="meals.html?meal=Goat">Goat</a></li>
-                                            </ul>
+    <body>
+        <!-- Webpage container  -->
+        <div class="uk-container nav_fix">
+            <!-- nav container -->
+            <header>
+                <nav class="uk-navbar-container uk-navbar-transparent uk-navbar ">
+                    <div class="uk-navbar-center">
+                        <div>
+                            <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
+                                <li class="uk-active"><a href="index.html" id="home" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
+                                <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
+
+                                <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+                                    <ul class="uk-nav uk-dropdown-nav uk-width-large">
+                                        <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
+                                            <div>
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="meals.html?meal=Beef">Beef</a></li>
+                                                    <li><a href="meals.html?meal=Breakfast">Breakfast</a></li>
+                                                    <li><a href="meals.html?meal=Chicken">Chicken</a></li>
+                                                    <li><a href="meals.html?meal=Goat">Goat</a></li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="meals.html?meal=Lamb">Lamb</a></li>
+                                                    <li><a href="meals.html?meal=Pasta">Pasta</a></li>
+                                                    <li><a href="meals.html?meal=Pork">Pork</a></li>
+                                                    <li><a href="meals.html?meal=Seafood">Seafood</a></li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="meals.html?meal=Vegan">Vegan</a></li>
+                                                    <li><a href="meals.html?meal=Vegetarian">Vegetarian</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="meals.html?meal=Lamb">Lamb</a></li>
-                                                <li><a href="meals.html?meal=Pasta">Pasta</a></li>
-                                                <li><a href="meals.html?meal=Pork">Pork</a></li>
-                                                <li><a href="meals.html?meal=Seafood">Seafood</a></li>
-                                            </ul>
+                                    </ul>
+                                </div>
+                                <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks" style="margin: auto; width: max-content">Drinks</a></li>
+
+                                <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+                                    <ul class="uk-nav uk-dropdown-nav uk-width-large">
+
+                                        <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
+                                            <div>
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="drinks.html?drink=Ale">Ale</a></li>
+                                                    <li><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
+                                                    <li><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
+                                                    <li><a href="drinks.html?drink=Brandy">Brandy</a></li>
+                                                    <li><a href="drinks.html?drink=Champagne">Champagne</a></li>
+                                                    <li><a href="drinks.html?drink=Cider">Cider</a></li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="drinks.html?drink=Gin">Gin</a></li>
+                                                    <li><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
+                                                    <li><a href="drinks.html?drink=Milk">Milk</a></li>
+                                                    <li><a href="drinks.html?drink=Port">Port</a></li>
+                                                    <li><a href="drinks.html?drink=Rum">Rum</a></li>
+                                                    <li><a href="drinks.html?drink=Scotch">Scotch</a></li>
+                                                </ul>
+                                            </div>
+                                            <div>
+                                                <ul class="uk-nav uk-dropdown-nav">
+                                                    <li><a href="drinks.html?drink=Sherry">Sherry</a></li>
+                                                    <li><a href="drinks.html?drink=Tea">Tea</a></li>
+                                                    <li><a href="drinks.html?drink=Tequila">Tequila</a></li>
+                                                    <li><a href="drinks.html?drink=Vodka">Vodka</a></li>
+                                                    <li><a href="drinks.html?drink=Whisky">Whiskey</a></li>
+                                                </ul>
+                                            </div>
                                         </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="meals.html?meal=Vegan">Vegan</a></li>
-                                                <li><a href="meals.html?meal=Vegetarian">Vegetarian</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </ul>
+                                    </ul>
+                                </div>
+                                <li class="uk-active"><a href="results.html" class="navo uk-text-center p-3 mb-2 bg-dark text-white" id="results">Results</a>
+                                </li>
+
+                            </ul>
+                        </div>
+                </nav>
+            </header>
+            <!-- Content Container -->
+            <div id="results_container_id" class="all_headers">
+                <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Results</h1>
+
+                <div class="uk-container" id="results_results">
+                    <div id="results_container" uk-grid>
+                        <div id="meal_recipe_d">
+                            <h4 id="meal_recipe_name_d">Meal Name</h4>
+                            <div id="meal_ingredient_container" class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%;">
+                                <img id="meal_recipe_img" src="https://via.placeholder.com/728x320.png" alt="Placeholder">
+                                <label id="meal_ingredients_header" class="uk-display-block" for="">Ingredients</label>
                             </div>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white"id="drinks"  style="margin: auto; width: max-content">Drinks</a></li>
-
-                            <div uk-dropdown="pos: bottom-center" class="dropdown_css">
-                                <ul class="uk-nav uk-dropdown-nav uk-width-large">
-
-                                    <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Ale">Ale</a></li>
-                                                <li><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
-                                                <li><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
-                                                <li><a href="drinks.html?drink=Brandy">Brandy</a></li>
-                                                <li><a href="drinks.html?drink=Champagne">Champagne</a></li>
-                                                <li><a href="drinks.html?drink=Cider">Cider</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Gin">Gin</a></li>
-                                                <li><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
-                                                <li><a href="drinks.html?drink=Milk">Milk</a></li>
-                                                <li><a href="drinks.html?drink=Port">Port</a></li>
-                                                <li><a href="drinks.html?drink=Rum">Rum</a></li>
-                                                <li><a href="drinks.html?drink=Scotch">Scotch</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Sherry">Sherry</a></li>
-                                                <li><a href="drinks.html?drink=Tea">Tea</a></li>
-                                                <li><a href="drinks.html?drink=Tequila">Tequila</a></li>
-                                                <li><a href="drinks.html?drink=Vodka">Vodka</a></li>
-                                                <li><a href="drinks.html?drink=Whisky">Whiskey</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </ul>
+                            <div id="meal_instuctions_container" class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%; margin-top: 15px;">
                             </div>
-                            <li class="uk-active"><a href="results.html"class="navo uk-text-center p-3 mb-2 bg-dark text-white" id="results">Results</a></li>
-
-                        </ul>
-                    </div>
-            </nav>
-        </header>
-        <!-- Content Container -->
-        <div>
-            <!-- Spacing Divider -->
-            <div>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <!-- row 1 Title  -->
-            <row >
-
-                <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" >Results</h1>
-                <div >
-                    <div class="uk-container" id="results_results">
-                        <div id="results_container" uk-grid>
+                        </div>
+                        <!-- <div id="results_container" uk-grid>
                             <div id="meal_recipe_d">
                                 <h4 id="meal_recipe_name_d">Meal Name</h4>
-                                <div id="meal_ingredient_container"class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%;">
+                                <div id="meal_ingredient_container" class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%;">
                                     <img id="meal_recipe_img" src="https://via.placeholder.com/728x320.png" alt="Placeholder">
-                                    <label id="meal_ingredients_header"class="uk-display-block" for="">Ingredients</label>
+                                    <label id="meal_ingredients_header" class="uk-display-block" for="">Ingredients</label>
                                 </div>
-                                <div id="meal_instuctions_container"class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%; margin-top: 15px;">
+                                <div id="meal_instuctions_container" class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%; margin-top: 15px;">
                                 </div>
+                            </div> -->
+
+                        <div id="drink_recipe_d" style="margin-top: 30px; width: 100%;">
+                            <div id="drink_recipe_name_container" class="uk-card uk-card-default uk-card-body uk-text-center">
+                                <h4 id="drink_recipe_name_d">Drink Name</h4>
                             </div>
-    
-                            <div id="drink_recipe_d" style="margin-top: 30px; width: 100%;">
-                                <div id="drink_recipe_name_container"class="uk-card uk-card-default uk-card-body uk-text-center">
-                                <h4 id="drink_recipe_name_d">Drink Name</h4">
-                                </div>
-                                <div id="drink_ingredient_container"class="uk-card uk-card-default uk-card-body uk-inline" style="width: 100%;">
-                                    <img id="drink_recipe_img"src="https://via.placeholder.com/728x320.png" alt="Placeholder">
-                                    <label id="drink_ingredients_header"class="uk-display-block" for="">Ingredients</label>
-                                </div>
-                                <div id="drink_instuctions_container" class="uk-card uk-card-default uk-card-body uk-inline"style="width: 100%; margin-top: 15px;"></div>
-                
+                            <div id="drink_ingredient_container " class="uk-card uk-card-default uk-card-body uk-inline " style="width: 100%; ">
+                                <img id="drink_recipe_img " src="https://via.placeholder.com/728x320.png " alt="Placeholder ">
+                                <label id="drink_ingredients_header " class="uk-display-block " for=" ">Ingredients</label>
+                            </div>
+                            <div id="drink_instuctions_container " class="uk-card uk-card-default uk-card-body uk-inline " style="width: 100%; margin-top: 15px; "></div>
+
                         </div>
                     </div>
                 </div>
 
-        </div>
-    </div>
-    </row>
+            </div>
+            <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
+            <script src="scripts/script.js "></script>
+            <script src="scripts/results.js "></script>
+            <script src="scripts/dropdownMeals.js "></script>
 
-    </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/results.js"></script>
-    <script src="scripts/dropdownMeals.js"></script>
 
-</body>
+    </body>
 
 </html>

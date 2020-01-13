@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,12 +10,13 @@
     <link rel="stylesheet" href="css/uikit.min.css" />
     <script src="scripts/uikit.min.js"></script>
     <script src="scripts/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href=css/style.css> 
+    <link rel="stylesheet" href=css/style.css>
     <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
 </head>
-<div id="bg"><img src="images/veggies.jpg" alt="veggies"></div>
+<div id="bg"><img src="" alt="veggies"></div>
+
 <body>
-    <div class="uk-container">
+    <div class="uk-container nav_fix">
         <header>
             <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
                 <div class="uk-navbar-center">
@@ -98,44 +100,25 @@
                     </div>
             </nav>
         </header>
-        <div>
-            <div>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <row>
-                <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Meals</h1>
-            </row>
-            <row>
-                <h3 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Search Food Recipes For The Perfect Date</h3>
-            </row>
-            <!-- recent searches carousel section -->
-            <row>
-                <form id="search_f" class="box uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
-                    <span uk-search-icon></span>
-
-                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Meal or Ingredient'" style="margin: auto; width: 600px;" width="100px" type="search" placeholder="Meal or Ingredient">
-                </form>
-            </row>
-            </row>
-            <!-- row 3 Most recent Searches  -->
-            <row>
-                <row>
-                    <div id="search_results_row" class="test uk-grid-match uk-child-width-1-5@m uk-text-center " uk-grid>
-                    </div>
-                </row>
-            </row>
+        <div class="all_headers">
+            <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Meals</h1>
+            <h3 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Search Food Recipes For The Perfect Date</h3>
+            <form id="search_f" class="box uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
+                <span uk-search-icon></span>
+                <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Meal or Ingredient'" style="" width="100px" type="search" placeholder="Meal or Ingredient">
+            </form>
         </div>
-    </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/dropdownMeals.js"></script>
+        <div id="search_results_row" class="test uk-grid-match uk-child-width-1-5@m uk-text-center " uk-grid>
+
+        </div>ƒ
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="scripts/script.js"></script>
+        <script src="scripts/dropdownMeals.js"></script>
 </body>
 
 </html>

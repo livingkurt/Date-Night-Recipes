@@ -1,4 +1,3 @@
-
 // Assign Element IDs to Variables
 var search_i_e = $("#search_i");
 var search_f_e = $("#search_f");
@@ -14,7 +13,7 @@ function category_m_api_call(meal_search) {
     // Assign Category Query URL to Variable
     var meal_category_query_url = "https://www.themealdb.com/api/json/v1/1/list.php?c=list";
     // Ajax Request to meal categories in mealdb API
-    $.ajax({ url: meal_category_query_url, method: "GET" }).then(function (response) {
+    $.ajax({ url: meal_category_query_url, method: "GET" }).then(function(response) {
         // Get the length of the search
         var array_len = response.meals.length;
         // Create empty array with all of the categories to compare the search to
@@ -23,7 +22,7 @@ function category_m_api_call(meal_search) {
         for (var i = 0; i < array_len; i++) {
             // Response for Categories
             var meal_cat = response.meals[i].strCategory
-            // Add call response to array while changing them all to lower case
+                // Add call response to array while changing them all to lower case
             meal_cat_array.push(meal_cat.toLowerCase())
         }
         // Reassign the cateogry array to a new variable
@@ -54,7 +53,7 @@ function category_m_api_call(meal_search) {
 // Makes API Call for meal and gets search data back
 function meal_api_call(meal_search_query_url) {
     // Ajax Request to search for meals in mealdb API
-    $.ajax({ url: meal_search_query_url, method: "GET" }).then(function (response) {
+    $.ajax({ url: meal_search_query_url, method: "GET" }).then(function(response) {
         // Get the length of the search
         var array_len = response.meals.length;
         // Loop to get all of the information for the search results based on how many items there are
@@ -78,7 +77,7 @@ function ingredient_d_api_call(drink_search) {
     // Assign ingredient Query URL to Variable
     var drink_ingredient_query_url = "https://www.thecocktaildb.com/api/json/v1/1/list.php?i=list";
     // Ajax Request to drink ingredient in cocktaildb API
-    $.ajax({ url: drink_ingredient_query_url, method: "GET" }).then(function (response) {
+    $.ajax({ url: drink_ingredient_query_url, method: "GET" }).then(function(response) {
         // Get the length of the search
         var array_len = response.drinks.length;
         // Create empty array with all of the ingredient to compare the search t
@@ -87,7 +86,7 @@ function ingredient_d_api_call(drink_search) {
         for (var i = 0; i < array_len; i++) {
             // Response for ingredient
             var drink_cat = response.drinks[i].strIngredient1
-            // Add call response to array while changing them all to lower case
+                // Add call response to array while changing them all to lower case
             drink_ing_array.push(drink_cat.toLowerCase())
         }
         // Reassign the cateogry array to a new variable
@@ -98,8 +97,7 @@ function ingredient_d_api_call(drink_search) {
             var drink_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drink_search;
             // Call Function that ends up actually getting the search results
             drink_api_call(drink_search_query_url);
-        }
-        else {
+        } else {
             // Use this as the query url
             var drink_filter_query_url = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + drink_search;
             // Call Function that ends up actually getting the search results
@@ -112,16 +110,16 @@ function ingredient_d_api_call(drink_search) {
 function drink_api_call(drink_search_query_url) {
     // Ajax Request to search for meals in drinkdb API
     console.log(drink_search_query_url)
-    $.ajax({ url: drink_search_query_url, method: "GET" }).then(function (response) {
+    $.ajax({ url: drink_search_query_url, method: "GET" }).then(function(response) {
         // Get the length of the search
         var array_len = response.drinks.length;
         console.log(array_len)
-        // Loop to get all of the information for the search results based on how many items there are
+            // Loop to get all of the information for the search results based on how many items there are
         for (var i = 0; i < array_len; i++) {
             // Assign The Drink Name to Variable
             var drink_name = response.drinks[i].strDrink;
             console.log(drink_name)
-            // Assign The Drink Image to Variable
+                // Assign The Drink Image to Variable
             var drink_img = response.drinks[i].strDrinkThumb;
             // Assign The Drink ID to Variable
             var drink_id = response.drinks[i].idDrink;
@@ -134,22 +132,20 @@ function drink_api_call(drink_search_query_url) {
 // Creates the elements and attributes them from the search results
 function search_results(name, img, id) {
 
-    
+
     var x = "Total Height: " + screen.height;
     // console.log(x)
     var body = document.body,
-    html = document.documentElement;
+        html = document.documentElement;
 
-    var height = Math.max( body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight );
+    var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
     console.log(height)
-    if (height > 1912){
+    if (height > 1912) {
         $("body").css("height", "unset")
-    }
-    else if (height < 1912){
+    } else if (height < 1912) {
         $("body").css("height: unset; background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;")
         $("html").css("height", "100%")
-    }
-    else if (height <= 1486){
+    } else if (height <= 1486) {
         $("body").css("height: unset; background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;")
         $("html").css("height", "100%")
     }
@@ -157,11 +153,11 @@ function search_results(name, img, id) {
     var row_result_e = $("<div>");
     // Changes Styling
     row_result_e.attr("style", "width: 400px;")
-    // Adds the search id to element id
+        // Adds the search id to element id
     row_result_e.attr("id", id)
-    // Adds a class to the container div
+        // Adds a class to the container div
     row_result_e.attr("class", "results_container")
-    // Placesthe container div to a parent div
+        // Placesthe container div to a parent div
     search_results_row_e.attr("style", "margin-bottom: 50px;")
     search_results_row_e.append(row_result_e);
 
@@ -188,40 +184,40 @@ function search_results(name, img, id) {
     result_img_e.attr("style", "border-radius: 25px; 25px; border: 4px solid #d8d8d8;");
     // Places the img in parent div
     result_div_e.append(result_img_e)
-    // Places the name and div in parent div
+        // Places the name and div in parent div
     row_result_e.append(result_name_e, result_div_e);
 }
 
 // When you click on a search result on either the meals or drink page
-$(document).on('click', '.results_container', function (event) {
-    // If you are on the meals.html page
-    if (window.location.href.indexOf("meals") > -1) {
-        // Assign the id that from the user chosen search result
-        var final_meal_id = $(this).attr("id")
-        // Open Drinks page and store id data inside of the url
-        var url = 'drinks.html?meal_id=' + final_meal_id;
-        var params = new URLSearchParams(window.location.search.slice(1));
-        if (params.has("drink_id")) {
-            url += "&drink_id=" + params.get("drink_id");
+$(document).on('click', '.results_container', function(event) {
+        // If you are on the meals.html page
+        if (window.location.href.indexOf("meals") > -1) {
+            // Assign the id that from the user chosen search result
+            var final_meal_id = $(this).attr("id")
+                // Open Drinks page and store id data inside of the url
+            var url = 'drinks.html?meal_id=' + final_meal_id;
+            var params = new URLSearchParams(window.location.search.slice(1));
+            if (params.has("drink_id")) {
+                url += "&drink_id=" + params.get("drink_id");
+            }
+            window.open(url, '_self');
         }
-        window.open(url, '_self');
-    }
-    // If you are on the drinks.html page
-    else if (window.location.href.indexOf("drinks") > -1) {
-        // Assign the id that from the user chosen search result
-        var final_drink_id = $(this).attr("id")
-        // Assign the last part of the url to variable
-        var params = new URLSearchParams(window.location.search.slice(1));
-        // Get the meal id from the url
-        var final_meal_id = params.get("meal_id");
-        // Open Results page and store id data inside of the url
-        window.open('results.html?meal_id=' + final_meal_id + '&drink_id=' + final_drink_id, '_self')
-    }
+        // If you are on the drinks.html page
+        else if (window.location.href.indexOf("drinks") > -1) {
+            // Assign the id that from the user chosen search result
+            var final_drink_id = $(this).attr("id")
+                // Assign the last part of the url to variable
+            var params = new URLSearchParams(window.location.search.slice(1));
+            // Get the meal id from the url
+            var final_meal_id = params.get("meal_id");
+            // Open Results page and store id data inside of the url
+            window.open('results.html?meal_id=' + final_meal_id + '&drink_id=' + final_drink_id, '_self')
+        }
 
 
-})
-// When the user presses enter after putting in a search
-search_f_e.on('submit', function (event) {
+    })
+    // When the user presses enter after putting in a search
+search_f_e.on('submit', function(event) {
     // Will Stop Page Refresh
     event.preventDefault();
     // Assigns Search Value to Variable
@@ -247,7 +243,7 @@ search_f_e.on('submit', function (event) {
 
 
 // Button on home page
-ready_b_e.on("click", function (event) {
+ready_b_e.on("click", function(event) {
     // Will Stop Page Refresh
     event.preventDefault();
     // Opens Meal Page
@@ -256,14 +252,14 @@ ready_b_e.on("click", function (event) {
 
 // Warning, major hack
 // Try and preserve the querystring for everylink that is clicked on
-$("a").on("click", function (event) {
+$("a").on("click", function(event) {
     event.preventDefault();
     var oldParams = new URLSearchParams(window.location.search.slice(1));
 
     var params = event.target.getAttribute("href").split("?");
     if (params[1]) {
         var newParams = new URLSearchParams(params[1]);
-        newParams.forEach(function (value, key) {
+        newParams.forEach(function(value, key) {
             if (value) {
                 oldParams.set(key, value);
             }
