@@ -1,4 +1,10 @@
 #bg {
+  /* display:none; */
+  background-image: url('../images/veggies.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   position: fixed;
   top: -50%;
   left: -50%;
@@ -6,232 +12,204 @@
   height: 200%;
   z-index: -1;
 }
-#bg img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: auto;
-  min-width: 50%;
-  min-height: 50%;
-}
 
 body {
-    background-color: transparent !important;
-/* #background { */
-    /* background-image: url("img_tree.gif"); */
-    
-    /* background-repeat: no-repeat;
-    background-attachment: fixed; */
-    /* background-color: black; */
-    /* background: url("images/veggies.jpg")!important;  */
-    /* background: url("images/veggies.jpg")!important;  */
-    /* background-image: url(../images/veggies.jpg); */
-    /* min-height: 100% */
-    /* height: fit-content; */
-    /* width: 100%; */
-  }
-88px
+  background-color: transparent !important;
+}
+
 html {
-    height: 100%;
+  height: 100%;
 }
 
-body, h1, h3, h4, h5, #home, #meals, #drinks, #results{
-    /* font-family: 'Shadows Into Light', cursive; */
-    /* font-family: 'Amatic SC', cursive; */
-    font-family: 'Shadows Into Light', cursive;
-    font-family: 'Amatic SC', cursive;
-    /* font-family: 'Molengo', sans-serif; */
-    /* font-family: 'Bad Script', cursive; */
-    font-family: 'Julius Sans One', sans-serif;
+body, h1, h3, h4, h5, #home, #meals, #drinks, #results {
+  /* font-family: 'Shadows Into Light', cursive; */
+  /* font-family: 'Amatic SC', cursive; */
+  font-family: 'Shadows Into Light', cursive;
+  font-family: 'Amatic SC', cursive;
+  /* font-family: 'Molengo', sans-serif; */
+  /* font-family: 'Bad Script', cursive; */
+  font-family: 'Julius Sans One', sans-serif;
 }
-
-
 
 .bg-dark {
-    /* opacity: .9; */
-    border-radius: 20px;
-    padding: 5px 10px 0px 10px ;
-
+  border-radius: 20px;
+  padding: 5px 10px 0px 10px;
 }
 
 .background {
-    /* opacity: .9; */
-    border-radius: 20px;
-    padding: 5px 10px 0px 10px ;
-    background-color: #343a40;
-
+  border-radius: 20px;
+  padding: 5px 10px 0px 10px;
+  background-color: #343a40;
 }
 
 .dropdown_css {
-    border-radius: 20px;
+  border-radius: 20px;
 }
 
-.nav_bar_z_index {
-    /* z-index: 0; */
-}
-
-background-position: center;
-background-size: cover;
-
-.z_index_lower {
-    /* z-index: 1; */
-}
-
-/* .titles {
-    position: relative;
-} */
-
-.parent {
-    position: relative;
-  }
-  
-.child {
-    z-index: 0;
-    /* width: 300px;
-    height: 100px;
-    padding: 20px; */
-
-    /* position: absolute;
-    top: 50%;
-    left: 50%;
-
-    margin: -70px 0 0 -170px; */
-}
-
-#ready_b{
-    font-size: 40px;
-    box-sizing: content-box;
-    padding: 15px 34px;
-    border-radius: 20px;
-    width: 525px;
-    margin: 0px;
-    height: 47px;
+#ready_b {
+  font-size: 40px;
+  box-sizing: content-box;
+  padding: 15px 34px;
+  border-radius: 20px;
+  width: 525px;
+  margin: 0px;
+  height: 47px;
 }
 
 #ready_b:hover {
-    background-color: #c14d5b;
-}
-.all_headers{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%;
-    margin-top: 95px;
+  background-color: #c14d5b;
 }
 
+.all_headers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  margin-top: 95px;
+}
 
+html {
+  height: 100%;
+  width: 100%;
+}
 
+head {
+  height: 100%;
+  width: 100%;
+}
 
-  /* style=";   background-image: url("images/veggies.jpg") */
+.nav_fix {
+  padding: 0px;
+}
 
+.uk-container {
+  height: 100%;
+  width: 100%;
+}
 
+.navo {
+  margin: auto;
+  width: max-content;
+}
 
+.box {
+  margin: auto;
+  width: max-content;
+}
+
+.red {
+  background-color: #c20018;
+}
+
+.uk-background-fixed {
+  min-height: 100%;
+  height: fit-content;
+  width: 100%;
+}
+
+.w-box {
+  width: 77px;
+}
+
+.big-box {
+  margin: auto;
+  width: max-content;
+  width: 522px;
+}
+
+.w {
+  width: 100%;
+}
+
+.w1 {
+  width: 100%;
+  margin-top: 15px;
+}
+
+#no_results {
+  font-size: 50px;
+  margin-top: 200px;
+  /* width: 400px; */
+}
+
+#search_i {
+  font-size: 50px;
+  /* width: 600px; */
+}
+
+#meal_recipe_img {
+  margin: 20px;
+}
+
+#drink_recipe_img {
+  margin: 20px;
+}
+
+/** Mobile **/
+
+@media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
+  #ready_b {
+    font-size: 20px;
+    width: 250px;
   }
-
-html{
-    height: 100%;
-    width: 100%;
+  h1 {
+    font-size: 30px;
+    width: 250px;
+  }
+  h3 {
+    font-size: 15px;
+    width: 250px;
+  }
+  #search_i {
+    font-size: 25px;
+    width: 400px;
+  }
+  /* #no_results {
+      font-size: 25px;
+      width: 400px;
+  } */
 }
 
-head{
-    height: 100%;
-    width: 100%;
+/* margin: auto; width: 600px; */
+
+/** Tablet **/
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  /* #no_results {
+      font-size: 55px;
+      width: 723px;
+  } */
 }
 
-/* .uk-background-cover{
-    min-height: 100%; 
-    height: fit-content; 
-    width: 100%;
-} */
+/** Tablet (landscape) **/
 
-/* .uk-container{
-    height: 100%; 
-    width: 100%;
-} */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
 
-.navo{
-    margin: auto; 
-    width: max-content;
+@media screen and (min-width: 768px) {
+  #no_results {
+    /* font-size: 30px; */
+    /* width: 723px; */
+  }
+  #search_i {
+    font-size: 40px;
+    width: 600px;
+  }
 }
 
-.box{
-    margin: auto; 
-    width: max-content;
-}
-
-.red{
-    background-color: #c20018;
-}
-
-.uk-background-fixed{
-    min-height: 100%; 
-    height: fit-content; 
-    width: 100%;
-    
-}
-
-.w-box{
-    width: 77px;
-}
-
-.big-box{
-    margin: auto; 
-    width: max-content;
-    width: 522px;  
-}
-
-.w{
-    width: 100%;
-}
-
-.w1{
-    width: 100%; 
-    margin-top: 15px;
-}
-
-@media screen and (max-width: 1024px) {
-    #ready_b {
-      max-width: 70%;
-        font-size: 22px;
-        box-shadow: #333 0px 3px 5px;
-    }
-    #get-started {
-        max-width: 70%;
-    }
-    #search_i {
-        max-width: 90%;
-        font-size: 32px;
-    }
-    #search-box{
-        max-width: 90%;
-
-    }
-    #search_results_row {
-        margin: 0 auto;
-        text-align: center;
-    }
-    .uk-first-column {
-        margin: 0 auto;
-padding:0px;
-    }
-    /* #meal_ingredient_container {
-        max-width: 90%;
-        margin: 0 auto;
-    } */
-    /* #meal-recipe_d {
-        margin: 0 auto;
-        max-width: 90%;
-    } */
-    #results_container {
-        margin: 0 auto;
-        max-width: 90%;
-    }
-    #meal_recipe_img {
-        margin: 0px 7px 25px 0px !important;
-        /* margin: 0 auto; */
-        /* padding: 0px 22px 20px 0px; */
-        
-    }
+@media screen and (max-width: 768px) {
+  #no_results {
+    font-size: 23px;
+    margin-top: 0px;
+    /* width: 723px; */
+  }
+  #search_results_row {
+    display: flex;
+    justify-content: center;
+  }
+  #meal_recipe_img {
+    margin: 0px;
+  }
+  #drink_recipe_img {
+    margin: 0px;
+  }
 }
