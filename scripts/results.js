@@ -12,9 +12,8 @@ if (meal_id === undefined) {
   var no_results = $("<div>");
   var results_div = $("#results_results")
   no_results.text("No Recipes at this Time")
-  no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline box red")
+  no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline box")
   no_results.attr("id", "no_results")
-  no_results.attr("style", "text-align: center; display: flex; border-radius: 20px; font-size: 65px; color: white; margin-top: 200px; justify-content: center;")
   results_div.append(no_results)
 
 
