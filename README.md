@@ -54,8 +54,7 @@ You will be asked to search for a specific cocktail, type of alcohol in cocktail
 
 The user will now be shown a meal recipe and a cocktail recipe based on the user search
 
-![Date Night Recipes](images/Results_Meal.png)
-![Date Night Recipes](images/Results_Drink.png)
+![Date Night Recipes](images/Results.png)
 
 #### Future Development
 

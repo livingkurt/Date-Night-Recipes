@@ -160,6 +160,11 @@ head {
   justify-content: center;
   padding: 20px;
   background-color: #920415 !important;
+  border: 0px;
+}
+
+#no_results:hover {
+  background-color: #a50518 !important;
 }
 
 #results_container {

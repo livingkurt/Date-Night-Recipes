@@ -9,7 +9,7 @@ console.log(meal_id)
 if (meal_id === undefined) {
   console.log("is null")
   $("#results_container").attr("style", "display: none;")
-  var no_results = $("<div>");
+  var no_results = $("<button>");
   var results_div = $("#results_results")
   no_results.text("No Recipes at this Time")
   no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline box")
@@ -18,6 +18,13 @@ if (meal_id === undefined) {
 
 
 }
+
+$(no_results).on("click", function (event) {
+  event.preventDefault();
+  window.open("index.html", '_self');
+
+})
+
 
 const api_calls = async () => {
   var m_route = "meals"

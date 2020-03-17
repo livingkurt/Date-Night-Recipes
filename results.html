@@ -31,12 +31,12 @@
           <div class="uk-navbar-center">
             <!-- Navbar -->
             <div>
-              <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark nav_bar">
+              <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark nav_bar  uk-dropdown-close">
                 <li class="uk-active"><a href="index.html" id="home"
                     class="navo uk-text-center p-3 mb-2 bg-dark text-white nav_buttons">Home</a></li>
                 <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals"
                     class="navo uk-text-center p-3 mb-2 bg-dark text-white nav_buttons">Meals</a></li>
-                <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+                <div uk-dropdown="pos: bottom-center" uk-dropdown="delay-hide: 20" class="dropdown_css">
                   <ul class="uk-nav uk-dropdown-nav uk-width-large">
                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                       <div>
@@ -66,9 +66,9 @@
                   </ul>
                 </div>
                 <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" id="drinks"
-                    class="uk-text-center p-3 mb-2 bg-dark text-white nav_buttons"
-                    style="margin: auto; width: max-content">Drinks</a></li>
-                <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+                    class="uk-text-center p-3 mb-2 bg-dark text-white nav_buttons">Drinks</a></li>
+                <div uk-dropdown="pos: bottom-center" uk-dropdown="delay-hide: 200"
+                  class="dropdown_css uk-dropdown-close">
 
                   <ul class="uk-nav uk-dropdown-nav uk-width-large">
 
