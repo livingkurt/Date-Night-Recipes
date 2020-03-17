@@ -13,6 +13,13 @@
   z-index: -1;
 }
 
+#overlay {
+  background-color: black !important;
+  opacity: 0.3;
+  height: 100%;
+  width: 100%;
+}
+
 body {
   background-color: transparent !important;
 }
@@ -47,11 +54,11 @@ body, h1, h3, h4, h5, #home, #meals, #drinks, #results {
 }
 
 #ready_b {
-  font-size: 40px;
+  font-size: 35px;
   box-sizing: content-box;
   padding: 15px 34px;
   border-radius: 20px;
-  width: 525px;
+  width: 430px;
   margin: 0px;
   height: 47px;
 }
@@ -89,12 +96,12 @@ head {
 
 .navo {
   margin: auto;
-  width: max-content;
+  /* width: max-content; */
 }
 
 .box {
   margin: auto;
-  width: max-content;
+  /* width: max-content; */
 }
 
 .red {
@@ -112,9 +119,9 @@ head {
 }
 
 .big-box {
-  margin: auto;
-  width: max-content;
-  width: 522px;
+  margin: 0px auto;
+  /* width: max-content; */
+  /* width: 522px; */
 }
 
 .w {
@@ -133,8 +140,12 @@ head {
 }
 
 #search_i {
-  font-size: 50px;
-  /* width: 600px; */
+  font-size: 35px;
+  max-width: 600px !important;
+}
+
+#search_f {
+  margin-top: 0px;
 }
 
 #meal_recipe_img {
@@ -145,12 +156,42 @@ head {
   margin: 20px;
 }
 
+#search_results_row {
+  display: flex;
+  justify-content: center;
+}
+
+.uk-container {
+  width: unset;
+}
+
+#meal_recipe_img {
+  margin: 0px !important;
+}
+
 /** Mobile **/
 
 @media only screen and (max-width: 767px), only screen and (max-device-width: 767px) {
   #ready_b {
     font-size: 20px;
     width: 250px;
+    padding: 10px;
+  }
+  .nav_bar {
+    height: 65px;
+    width: 275px;
+  }
+  .nav_buttons {
+    height: 50px !important;
+    padding: 0px 11px!important;
+    font-size: 12px !important;
+    min-height: 20px !important;
+  }
+  .uk-width-large {
+    width: 250px;
+  }
+  nav {
+    height: 0px;
   }
   h1 {
     font-size: 30px;
@@ -158,16 +199,21 @@ head {
   }
   h3 {
     font-size: 15px;
-    width: 250px;
+    max-width: 350px !important;
   }
   #search_i {
-    font-size: 25px;
-    width: 400px;
+    font-size: 20px !important;
+    max-width: 330px !important;
+    height: 50px;
+  }
+  #search_results_row {
+    display: flex;
+    justify-content: center;
   }
   /* #no_results {
-      font-size: 25px;
-      width: 400px;
-  } */
+        font-size: 25px;
+        width: 400px;
+    } */
 }
 
 /* margin: auto; width: 600px; */
@@ -176,9 +222,9 @@ head {
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   /* #no_results {
-      font-size: 55px;
-      width: 723px;
-  } */
+        font-size: 55px;
+        width: 723px;
+    } */
 }
 
 /** Tablet (landscape) **/
@@ -190,17 +236,16 @@ head {
     /* font-size: 30px; */
     /* width: 723px; */
   }
-  #search_i {
+  /* #search_i {
     font-size: 40px;
     width: 600px;
-  }
+  } */
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
   #no_results {
     font-size: 23px;
     margin-top: 0px;
-    /* width: 723px; */
   }
   #search_results_row {
     display: flex;
@@ -212,4 +257,4 @@ head {
   #drink_recipe_img {
     margin: 0px;
   }
-}
+} */

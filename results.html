@@ -27,19 +27,20 @@
     <div class="uk-container">
       <!-- nav container -->
       <header>
-        <nav class="uk-navbar-container uk-navbar-transparent uk-navbar ">
+        <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
           <div class="uk-navbar-center">
+            <!-- Navbar -->
             <div>
-              <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
+              <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark nav_bar">
                 <li class="uk-active"><a href="index.html" id="home"
-                    class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
+                    class="navo uk-text-center p-3 mb-2 bg-dark text-white nav_buttons">Home</a></li>
                 <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals"
-                    class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
-
+                    class="navo uk-text-center p-3 mb-2 bg-dark text-white nav_buttons">Meals</a></li>
                 <div uk-dropdown="pos: bottom-center" class="dropdown_css">
                   <ul class="uk-nav uk-dropdown-nav uk-width-large">
                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                       <div>
+                        <!-- Navbar meal items listed with the href so the search term populates into the html. -->
                         <ul class="uk-nav uk-dropdown-nav">
                           <li><a href="meals.html?meal=Beef">Beef</a></li>
                           <li><a href="meals.html?meal=Breakfast">Breakfast</a></li>
@@ -64,11 +65,11 @@
                     </div>
                   </ul>
                 </div>
-                <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html"
-                    class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks"
+                <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" id="drinks"
+                    class="uk-text-center p-3 mb-2 bg-dark text-white nav_buttons"
                     style="margin: auto; width: max-content">Drinks</a></li>
-
                 <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+
                   <ul class="uk-nav uk-dropdown-nav uk-width-large">
 
                     <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
@@ -104,9 +105,8 @@
                     </div>
                   </ul>
                 </div>
-                <li class="uk-active"><a href="results.html" class="navo uk-text-center p-3 mb-2 bg-dark text-white"
-                    id="results">Results</a></li>
-
+                <li class="uk-active"><a href="results.html" id="results"
+                    class="navo uk-text-center p-3 mb-2 bg-dark text-white nav_buttons">Results</a></li>
               </ul>
             </div>
         </nav>
@@ -141,15 +141,15 @@
 
                 <div id="drink_recipe_d" style="margin-top: 30px; width: 100%;">
                   <div id="drink_recipe_name_container" class="uk-card uk-card-default uk-card-body uk-text-center">
-                    <h4 id="drink_recipe_name_d">Drink Name</h4">
+                    <h4 id="drink_recipe_name_d">Drink Name</h4>
                   </div>
-                  <div id="drink_ingredient_container" class="uk-card uk-card-default uk-card-body uk-inline"
-                    style="width: 100%;">
-                    <img id="drink_recipe_img" src="https://via.placeholder.com/728x320.png" alt="Placeholder">
-                    <label id="drink_ingredients_header" class="uk-display-block" for="">Ingredients</label>
+                  <div id="drink_ingredient_container " class="uk-card uk-card-default uk-card-body uk-inline "
+                    style="width: 100%; ">
+                    <img id="drink_recipe_img " src="https://via.placeholder.com/728x320.png " alt="Placeholder ">
+                    <label id="drink_ingredients_header " class="uk-display-block " for=" ">Ingredients</label>
                   </div>
-                  <div id="drink_instuctions_container" class="uk-card uk-card-default uk-card-body uk-inline"
-                    style="width: 100%; margin-top: 15px;"></div>
+                  <div id="drink_instuctions_container " class="uk-card uk-card-default uk-card-body uk-inline "
+                    style="width: 100%; margin-top: 15px; "></div>
 
                 </div>
               </div>
@@ -161,10 +161,10 @@
 
     </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/results.js"></script>
-    <script src="scripts/dropdownMeals.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js "></script>
+    <script src="scripts/script.js "></script>
+    <script src="scripts/results.js "></script>
+    <script src="scripts/dropdownMeals.js "></script>
 
   </body>
 
