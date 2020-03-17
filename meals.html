@@ -1,141 +1,162 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Date Night Recipes</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/uikit.min.css" />
-    <script src="scripts/uikit.min.js"></script>
-    <script src="scripts/uikit-icons.min.js"></script>
-    <link rel="stylesheet" href=css/style.css> 
-    <link href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Date Night Recipes</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/uikit.min.css" />
+  <script src="scripts/uikit.min.js"></script>
+  <script src="scripts/uikit-icons.min.js"></script>
+  <link rel="stylesheet" href=css/style.css>
+  <link
+    href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap"
+    rel="stylesheet">
 </head>
 <div id="bg"><img src="images/veggies.jpg" alt="veggies"></div>
+
 <body>
-    <div class="uk-container">
-        <header>
-            <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
-                <div class="uk-navbar-center">
+  <div class="uk-container">
+    <header>
+      <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
+        <div class="uk-navbar-center">
+          <div>
+            <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
+              <li class="uk-active"><a href="index.html" id="home"
+                  class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
+              <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals"
+                  class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
+              <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+                <ul class="uk-nav uk-dropdown-nav uk-width-large">
+                  <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
                     <div>
-                        <ul class="uk-navbar-nav uk-dropdown-navbar bg-dark ">
-                            <li class="uk-active"><a href="index.html" id="home" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Home</a></li>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="meals.html" id="meals" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Meals</a></li>
-                            <div uk-dropdown="pos: bottom-center" class="dropdown_css">
-                                <ul class="uk-nav uk-dropdown-nav uk-width-large">
-                                    <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li class="mealChoice"><a href="meals.html?meal=Beef">Beef</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Breakfast">Breakfast</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Chicken">Chicken</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Goat">Goat</a></li>
+                      <ul class="uk-nav uk-dropdown-nav">
+                        <li class="mealChoice"><a href="meals.html?meal=Beef">Beef</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Breakfast">Breakfast</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Chicken">Chicken</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Goat">Goat</a></li>
 
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-
-                                                <li class="mealChoice"><a href="meals.html?meal=Lamb">Lamb</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Pasta">Pasta</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Pork">Pork</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Seafood">Seafood</a></li>
-
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-
-                                                <li class="mealChoice"><a href="meals.html?meal=Vegan">Vegan</a></li>
-                                                <li class="mealChoice"><a href="meals.html?meal=Vegetarian">Vegetarian</a></li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </div>
-                            <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html" class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks" style="margin: auto; width: max-content">Drinks</a></li>
-                            <div uk-dropdown="pos: bottom-center" class="dropdown_css">
-
-                                <ul class="uk-nav uk-dropdown-nav uk-width-large">
-
-                                    <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Ale">Ale</a></li>
-                                                <li><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
-                                                <li><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
-                                                <li><a href="drinks.html?drink=Brandy">Brandy</a></li>
-                                                <li><a href="drinks.html?drink=Champagne">Champagne</a></li>
-                                                <li><a href="drinks.html?drink=Cider">Cider</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Gin">Gin</a></li>
-                                                <li><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
-                                                <li><a href="drinks.html?drink=Milk">Milk</a></li>
-                                                <li><a href="drinks.html?drink=Port">Port</a></li>
-                                                <li><a href="drinks.html?drink=Rum">Rum</a></li>
-                                                <li><a href="drinks.html?drink=Scotch">Scotch</a></li>
-                                            </ul>
-                                        </div>
-                                        <div>
-                                            <ul class="uk-nav uk-dropdown-nav">
-                                                <li><a href="drinks.html?drink=Sherry">Sherry</a></li>
-                                                <li><a href="drinks.html?drink=Tea">Tea</a></li>
-                                                <li><a href="drinks.html?drink=Tequila">Tequila</a></li>
-                                                <li><a href="drinks.html?drink=Vodka">Vodka</a></li>
-                                                <li><a href="drinks.html?drink=Whisky">Whiskey</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </ul>
-                            </div>
-                            <li class="uk-active"><a href="results.html" id="results" class="navo uk-text-center p-3 mb-2 bg-dark text-white">Results</a></li>
-                        </ul>
+                      </ul>
                     </div>
-            </nav>
-        </header>
-        <div>
-            <div>
-                <br>
-                <br>
-                <br>
-                <br>
-            </div>
-            <row>
-                <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Meals</h1>
-            </row>
-            <row>
-                <h3 id='search-box' class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Search Food Recipes For The Perfect Date</h3>
-            </row>
-            <!-- recent searches carousel section -->
-            <row>
-                <form id="search_f" class="box uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
-                    <span uk-search-icon></span>
+                    <div>
+                      <ul class="uk-nav uk-dropdown-nav">
 
-                    <input id="search_i" class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Meal or Ingredient'" style="margin: auto; width: 600px;" width="100px" type="search" placeholder="Meal or Ingredient">
-                </form>
-            </row>
-            </row>
-            <!-- row 3 Most recent Searches  -->
-            <row>
-                <row>
-                    <div id="search_results_row" class="test uk-grid-match uk-child-width-1-5@m uk-text-center " uk-grid>
+                        <li class="mealChoice"><a href="meals.html?meal=Lamb">Lamb</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Pasta">Pasta</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Pork">Pork</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Seafood">Seafood</a></li>
+
+                      </ul>
                     </div>
-                </row>
-            </row>
-        </div>
+                    <div>
+                      <ul class="uk-nav uk-dropdown-nav">
+
+                        <li class="mealChoice"><a href="meals.html?meal=Vegan">Vegan</a></li>
+                        <li class="mealChoice"><a href="meals.html?meal=Vegetarian">Vegetarian</a></li>
+
+                      </ul>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <li class="uk-active uk-dropdown-nav uk-dropdown-grid"><a href="drinks.html"
+                  class="uk-text-center p-3 mb-2 bg-dark text-white" id="drinks"
+                  style="margin: auto; width: max-content">Drinks</a></li>
+              <div uk-dropdown="pos: bottom-center" class="dropdown_css">
+
+                <ul class="uk-nav uk-dropdown-nav uk-width-large">
+
+                  <div class="uk-dropdown-grid uk-child-width-1-3" uk-grid>
+                    <div>
+                      <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="drinks.html?drink=Ale">Ale</a></li>
+                        <li><a href="drinks.html?drink=Amaretto">Amaretto</a></li>
+                        <li><a href="drinks.html?drink=Bourbon">Bourbon</a></li>
+                        <li><a href="drinks.html?drink=Brandy">Brandy</a></li>
+                        <li><a href="drinks.html?drink=Champagne">Champagne</a></li>
+                        <li><a href="drinks.html?drink=Cider">Cider</a></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="drinks.html?drink=Gin">Gin</a></li>
+                        <li><a href="drinks.html?drink=Kahlua">Kahlua</a></li>
+                        <li><a href="drinks.html?drink=Milk">Milk</a></li>
+                        <li><a href="drinks.html?drink=Port">Port</a></li>
+                        <li><a href="drinks.html?drink=Rum">Rum</a></li>
+                        <li><a href="drinks.html?drink=Scotch">Scotch</a></li>
+                      </ul>
+                    </div>
+                    <div>
+                      <ul class="uk-nav uk-dropdown-nav">
+                        <li><a href="drinks.html?drink=Sherry">Sherry</a></li>
+                        <li><a href="drinks.html?drink=Tea">Tea</a></li>
+                        <li><a href="drinks.html?drink=Tequila">Tequila</a></li>
+                        <li><a href="drinks.html?drink=Vodka">Vodka</a></li>
+                        <li><a href="drinks.html?drink=Whisky">Whiskey</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </ul>
+              </div>
+              <li class="uk-active"><a href="results.html" id="results"
+                  class="navo uk-text-center p-3 mb-2 bg-dark text-white">Results</a></li>
+            </ul>
+          </div>
+      </nav>
+    </header>
+    <div>
+      <div>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+      <row>
+        <h1 class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Meals</h1>
+      </row>
+      <row>
+        <h3 id='search-box' class="box uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded">Search Food Recipes
+          For The Perfect Date</h3>
+      </row>
+      <!-- recent searches carousel section -->
+      <row>
+        <form id="search_f"
+          class="box uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
+          <span uk-search-icon></span>
+
+          <input id="search_i"
+            class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Meal or Ingredient'"
+            style="margin: auto; width: 600px;" width="100px" type="search" placeholder="Meal or Ingredient">
+        </form>
+      </row>
+      </row>
+      <!-- row 3 Most recent Searches  -->
+      <row>
+        <row>
+          <div id="search_results_row" class="test uk-grid-match uk-child-width-1-5@m uk-text-center " uk-grid>
+          </div>
+        </row>
+      </row>
     </div>
+  </div>
 
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="scripts/script.js"></script>
-    <script src="scripts/dropdownMeals.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  <script src="scripts/script.js"></script>
+  <script src="scripts/dropdownMeals.js"></script>
 </body>
 
 </html>
