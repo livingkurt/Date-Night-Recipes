@@ -146,10 +146,10 @@ head{
     width: 100%;
 } */
 
-.uk-container{
+/* .uk-container{
     height: 100%; 
     width: 100%;
-}
+} */
 
 .navo{
     margin: auto; 
@@ -191,3 +191,47 @@ head{
     margin-top: 15px;
 }
 
+@media screen and (max-width: 1024px) {
+    #ready_b {
+      max-width: 70%;
+        font-size: 22px;
+        box-shadow: #333 0px 3px 5px;
+    }
+    #get-started {
+        max-width: 70%;
+    }
+    #search_i {
+        max-width: 90%;
+        font-size: 32px;
+    }
+    #search-box{
+        max-width: 90%;
+
+    }
+    #search_results_row {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .uk-first-column {
+        margin: 0 auto;
+padding:0px;
+    }
+    /* #meal_ingredient_container {
+        max-width: 90%;
+        margin: 0 auto;
+    } */
+    /* #meal-recipe_d {
+        margin: 0 auto;
+        max-width: 90%;
+    } */
+    #results_container {
+        margin: 0 auto;
+        max-width: 90%;
+    }
+    #meal_recipe_img {
+        margin: 0px 7px 25px 0px !important;
+        /* margin: 0 auto; */
+        /* padding: 0px 22px 20px 0px; */
+        
+    }
+}
