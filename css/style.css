@@ -13,6 +13,10 @@
   z-index: -1;
 }
 
+ol, ul {
+  padding-left: 10px;
+}
+
 #overlay {
   background-color: black !important;
   opacity: 0.3;
@@ -68,8 +72,13 @@ body, h1, h3, h4, h5, #home, #meals, #drinks, #results {
   border-radius: 20px;
   /* width: 70px; */
   margin: 0px;
+  margin-left: 10px;
   height: 57px;
   background-color: #920415 !important;
+}
+
+#search_b:hover {
+  background-color: #c20319 !important;
 }
 
 #search_bar_button {
@@ -156,20 +165,36 @@ head {
   background-color: #920415 !important;
 }
 
+#results_container {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+
+#meal_recipe_d {
+  width: 50%;
+}
+
+#drink_recipe_d {
+  width: 50%;
+}
+
 #search_i {
   font-size: 27px;
   max-width: 600px !important;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
 }
 
 #search_f {
   margin-top: 0px;
 }
 
-#meal_recipe_img {
-  margin: 20px;
-}
-
-#drink_recipe_img {
+#meal_recipe_img, #drink_recipe_img {
+  border-radius: 20px;
   margin: 20px;
 }
 
@@ -182,8 +207,37 @@ head {
   width: unset;
 }
 
-#meal_recipe_img {
-  margin: 0px !important;
+#drink_recipe_name, #meal_recipe_name {
+  margin-top: 0px;
+  /* margin-bottom: 0px; */
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#drink_recipe_name_d, #meal_recipe_name {
+  margin-bottom: 0px !important;
+}
+
+h4 {
+  margin-bottom: 0px !important;
+}
+
+#drink_ingredient_container, #meal_ingredient_container {
+  border-radius: 20px;
+  width: 100%;
+  margin-top: 10px;
+  opacity: .9;
+  /* margin-bottom: 50px; */
+  font-weight: bold;
+  /* color: black; */
+}
+
+#drink_instuctions_container, #meal_instuctions_container {
+  /* font-size: 14px !important; */
+  border-radius: 15px;
+  width: 100%;
+  margin-top: 15px;
+  color: black;
 }
 
 /** Mobile **/
@@ -229,7 +283,8 @@ head {
     padding: 5px;
     width: 70px;
     margin: 0px;
-    height: 42px;
+    height: 40px;
+    margin-left: 5px;
     /* height: 30px; */
   }
   #no_results {
@@ -239,6 +294,20 @@ head {
   #search_results_row {
     display: flex;
     justify-content: center;
+  }
+  #drink_recipe_name, #meal_recipe_name {
+    margin-top: 0px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  #drink_ingredient_container, #meal_ingredient_container {
+    font-size: 14px;
+  }
+  #drink_instuctions_container, #meal_instuctions_container {
+    font-size: 14px !important;
+    border-radius: 15px !important;
+    width: 100%;
+    margin-top: 15px;
   }
   /* #no_results {
         font-size: 25px;
@@ -261,7 +330,21 @@ head {
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 600px) {
+  #results_container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  #meal_recipe_d, #drink_recipe_d {
+    /* font-size: 14px; */
+    width: 100%;
+  }
+  #drink_instuctions_container, #meal_instuctions_container {
+    /* font-size: 14px !important;
+    border-radius: 15px !important; */
+    width: 100%;
+    /* margin-top: 15px; */
+  }
   /* #no_results { */
   /* font-size: 30px; */
   /* width: 723px; */
