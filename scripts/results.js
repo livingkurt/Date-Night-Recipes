@@ -15,30 +15,41 @@ if (meal_id === undefined) {
   no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline box red")
   no_results.attr("id", "no_results")
   no_results.attr("style", "text-align: center; display: flex; border-radius: 20px; font-size: 65px; color: white; margin-top: 200px; justify-content: center;")
-
-
-
   results_div.append(no_results)
 
 
 }
 
+const api_calls = async () => {
+  var m_route = "meals"
+  var m_modifier = "meal"
+  var m_name = "strMeal"
+  var m_img = "strMealThumb"
+  var m_search_query_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + meal_id
 
-var m_route = "meals"
-var m_modifier = "meal"
-var m_name = "strMeal"
-var m_img = "strMealThumb"
-var m_search_query_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + meal_id
+  await get_results(m_route, m_name, m_img, m_search_query_url, m_modifier);
 
-get_results(m_route, m_name, m_img, m_search_query_url, m_modifier);
+  var d_route = "drinks"
+  var d_modifier = "drink"
+  var d_name = "strDrink"
+  var d_img = "strDrinkThumb"
+  var d_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink_id
 
-var d_route = "drinks"
-var d_modifier = "drink"
-var d_name = "strDrink"
-var d_img = "strDrinkThumb"
-var d_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink_id
+  await get_results(d_route, d_name, d_img, d_search_query_url, d_modifier);
 
-get_results(d_route, d_name, d_img, d_search_query_url, d_modifier);
+  // var m_route = "drinks"
+  // var m_modifier = "drink"
+  // var m_name = "strDrink"
+  // var m_img = "strDrinkThumb"
+  // var m_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink_id
+  // debugger;
+  // await get_results(m_route, m_name, m_img, m_search_query_url, m_modifier);
+}
+// debugger;
+api_calls()
+
+
+
 
 
 function get_results(route, name, img, search_query_url, modifier) {
