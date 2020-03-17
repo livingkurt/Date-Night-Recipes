@@ -19,7 +19,7 @@
 
 <body>
   <div id="bg">
-    <!-- <img src="" alt="veggies"> -->
+    <div id="overlay"></div>
   </div>
 
   <body>
@@ -119,10 +119,15 @@
         <form id="search_f"
           class="uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
           <!-- <span uk-search-icon></span> -->
-          <input id="search_i"
-            class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
-            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Drink or Ingredient'" type="search"
-            placeholder="Drink or Ingredient">
+
+          <div id="search_bar_button">
+            <input id="search_i"
+              class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
+              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Drink or Ingredient'" type="search"
+              placeholder="Drink or Ingredient">
+            <button id="search_b"
+              class="uk-button uk-button-danger uk-align-center uk-border-rounded background">Search</button>
+          </div>
         </form>
       </div>
 

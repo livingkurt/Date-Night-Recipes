@@ -29,12 +29,8 @@ html {
 }
 
 body, h1, h3, h4, h5, #home, #meals, #drinks, #results {
-  /* font-family: 'Shadows Into Light', cursive; */
-  /* font-family: 'Amatic SC', cursive; */
   font-family: 'Shadows Into Light', cursive;
   font-family: 'Amatic SC', cursive;
-  /* font-family: 'Molengo', sans-serif; */
-  /* font-family: 'Bad Script', cursive; */
   font-family: 'Julius Sans One', sans-serif;
 }
 
@@ -61,10 +57,29 @@ body, h1, h3, h4, h5, #home, #meals, #drinks, #results {
   width: 430px;
   margin: 0px;
   height: 47px;
+  margin: auto;
+  background-color: #920415 !important;
+}
+
+#search_b {
+  font-size: 27px;
+  box-sizing: content-box;
+  padding: 12px;
+  border-radius: 20px;
+  /* width: 70px; */
+  margin: 0px;
+  height: 57px;
+  background-color: #920415 !important;
+}
+
+#search_bar_button {
+  display: flex;
+  justify-content: center;
+  padding: 0px 10px;
 }
 
 #ready_b:hover {
-  background-color: #c14d5b;
+  background-color: #c20319 !important;
 }
 
 .all_headers {
@@ -104,10 +119,6 @@ head {
   /* width: max-content; */
 }
 
-.red {
-  background-color: #c20018;
-}
-
 .uk-background-fixed {
   min-height: 100%;
   height: fit-content;
@@ -134,13 +145,19 @@ head {
 }
 
 #no_results {
-  font-size: 50px;
+  text-align: center;
+  display: flex;
+  border-radius: 20px;
+  font-size: 45px !important;
+  color: white;
+  width: 60% !important;
   margin-top: 200px;
-  /* width: 400px; */
+  justify-content: center;
+  background-color: #920415 !important;
 }
 
 #search_i {
-  font-size: 35px;
+  font-size: 27px;
   max-width: 600px !important;
 }
 
@@ -203,8 +220,21 @@ head {
   }
   #search_i {
     font-size: 20px !important;
-    max-width: 330px !important;
+    max-width: 265px !important;
     height: 50px;
+  }
+  #search_b {
+    font-size: 14px !important;
+    max-width: 330px !important;
+    padding: 5px;
+    width: 70px;
+    margin: 0px;
+    height: 42px;
+    /* height: 30px; */
+  }
+  #no_results {
+    font-size: 23px !important;
+    margin-top: 0px !important;
   }
   #search_results_row {
     display: flex;
@@ -232,14 +262,16 @@ head {
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
 
 @media screen and (min-width: 768px) {
-  #no_results {
-    /* font-size: 30px; */
-    /* width: 723px; */
-  }
-  /* #search_i {
+  /* #no_results { */
+  /* font-size: 30px; */
+  /* width: 723px; */
+}
+
+/* #search_i {
     font-size: 40px;
     width: 600px;
   } */
+
 }
 
 /* @media screen and (max-width: 768px) {

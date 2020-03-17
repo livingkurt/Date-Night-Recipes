@@ -16,11 +16,13 @@
     href="https://fonts.googleapis.com/css?family=Amatic+SC|Bad+Script|Julius+Sans+One|Molengo|Shadows+Into+Light&display=swap"
     rel="stylesheet">
 </head>
-<div id="bg">
-  <!-- <img src="" alt="veggies"> -->
-</div>
+
+
 
 <body>
+  <div id="bg">
+    <div id="overlay"></div>
+  </div>
   <div class="uk-container nav_fix">
     <header>
       <nav class="uk-navbar-container uk-navbar-transparent uk-navbar">
@@ -114,10 +116,14 @@
       <form id="search_f"
         class="box uk-search uk-search-large uk-align-center uk-child-width-responsive uk-text-center text-white uk-border-rounded">
         <!-- <span uk-search-icon></span> -->
-        <input id="search_i"
-          class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
-          onfocus="this.placeholder = ''" onblur="this.placeholder = 'Meal or Ingredient'" width="100px" type="search"
-          placeholder="Meal or Ingredient">
+        <div id="search_bar_button">
+          <input id="search_i"
+            class="uk-search-input uk-text-center uk-text-center p-3 mb-2 bg-dark text-white uk-border-rounded"
+            onfocus="this.placeholder = ''" onblur="this.placeholder = 'Meal or Ingredient'" width="100px" type="search"
+            placeholder="Meal or Ingredient">
+          <button id="search_b"
+            class="uk-button uk-button-danger uk-align-center uk-border-rounded background">Search</button>
+        </div>
       </form>
     </div>
 
