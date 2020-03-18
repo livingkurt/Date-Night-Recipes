@@ -43,12 +43,7 @@ const api_calls = async () => {
 
   await get_results(d_route, d_name, d_img, d_search_query_url, d_modifier);
 }
-// debugger;
 api_calls()
-
-
-
-
 
 function get_results(route, name, img, search_query_url, modifier) {
   $("body").css("height", "unset")
@@ -67,7 +62,6 @@ function get_results(route, name, img, search_query_url, modifier) {
     place_image(recipe, img, modifier)
     // Assign Element to Variable
     var ingredient_container_e = $("#" + modifier + "_ingredient_container");
-
     ingredient_container_e.attr("style", "opacity: .9; width: 100%; border-radius: 20px;  font-weight: bold; color: black;")
     // Assign Element to Variable
     var ingredients_header_e = $("#" + modifier + "_ingredients_header");
@@ -76,10 +70,7 @@ function get_results(route, name, img, search_query_url, modifier) {
     // Create a Unordered List
     var instructions_container_e = $("#" + modifier + "_instuctions_container")
     instructions_container_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
-    // instructions_container_e.attr("style", "border-radius: 20px; width: 100%; margin-top: 10px; opacity: .9;  margin-bottom: 50px;  font-weight: bold; color: black;")
-
     var ingredient_list_e = $("<ul>");
-
     // Place Ingredients in Elements+
     place_ingredients(recipe, ingredient_list_e);
     // Create a label for the Instrucitons header
@@ -87,7 +78,6 @@ function get_results(route, name, img, search_query_url, modifier) {
     // Place Instuctions in Element
     create_instructions_label(instructions_label_e)
     // Create a paragraph tag for instructions
-    // var instructions_p_e = $("<p>");
     var instructions_list_e = $("<ol>");
     // Place Paragraph Tag on Page
     create_instructions(recipe, instructions_list_e);

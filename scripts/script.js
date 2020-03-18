@@ -269,10 +269,6 @@ search_f_e.on('submit', function (event) {
   }
 })
 
-
-
-
-
 // Button on home page
 ready_b_e.on("click", function (event) {
   // Will Stop Page Refresh
