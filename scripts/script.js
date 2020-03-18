@@ -56,18 +56,33 @@ function meal_api_call(meal_search_query_url) {
   // Ajax Request to search for meals in mealdb API
   $.ajax({ url: meal_search_query_url, method: "GET" }).then(function (response) {
     // Get the length of the search
-    var array_len = response.meals.length;
-    // Loop to get all of the information for the search results based on how many items there are
-    for (var i = 0; i < array_len; i++) {
-      // Assign The Meal Name to Variable
-      var meal_name = response.meals[i].strMeal;
-      // Assign The Meal Image to Variable
-      var meal_img = response.meals[i].strMealThumb;
-      // Assign The Meal ID to Variable
-      var meal_id = response.meals[i].idMeal;
-      // Call Function that creates the elements for the search results
-      search_results(meal_name, meal_img, meal_id);
+
+    console.log(response)
+    if (response.meals === null) {
+      console.log("is null")
+      var no_results = $("<div>");
+      // var results_div = $("#search_results_row")
+      no_results.text("No Results")
+      no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
+      no_results.attr("id", "no_results_2")
+      search_results_row_e.append(no_results)
     }
+    else {
+      var array_len = response.meals.length;
+      // Loop to get all of the information for the search results based on how many items there are
+      for (var i = 0; i < array_len; i++) {
+        // Assign The Meal Name to Variable
+        var meal_name = response.meals[i].strMeal;
+        // Assign The Meal Image to Variable
+        var meal_img = response.meals[i].strMealThumb;
+        // Assign The Meal ID to Variable
+        var meal_id = response.meals[i].idMeal;
+        // Call Function that creates the elements for the search results
+        search_results(meal_name, meal_img, meal_id);
+      }
+    }
+
+
   })
 }
 
@@ -112,21 +127,33 @@ function ingredient_d_api_call(drink_search) {
 function drink_api_call(drink_search_query_url) {
   // Ajax Request to search for meals in drinkdb API
   console.log(drink_search_query_url)
+
   $.ajax({ url: drink_search_query_url, method: "GET" }).then(function (response) {
     // Get the length of the search
-    var array_len = response.drinks.length;
-    console.log(array_len)
-    // Loop to get all of the information for the search results based on how many items there are
-    for (var i = 0; i < array_len; i++) {
-      // Assign The Drink Name to Variable
-      var drink_name = response.drinks[i].strDrink;
-      console.log(drink_name)
-      // Assign The Drink Image to Variable
-      var drink_img = response.drinks[i].strDrinkThumb;
-      // Assign The Drink ID to Variable
-      var drink_id = response.drinks[i].idDrink;
-      // Call Function that creates the elements for the search results
-      search_results(drink_name, drink_img, drink_id);
+    console.log(response)
+    if (response.drinks === null) {
+      console.log("is null")
+      var no_results = $("<div>");
+      // var results_div = $("#search_results_row")
+      no_results.text("No Results")
+      no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
+      no_results.attr("id", "no_results_2")
+      search_results_row_e.append(no_results)
+    }
+    else {
+      var array_len = response.drinks.length;
+      // Loop to get all of the information for the search results based on how many items there are
+      for (var i = 0; i < array_len; i++) {
+        // Assign The Drink Name to Variable
+        var drink_name = response.drinks[i].strDrink;
+        console.log(drink_name)
+        // Assign The Drink Image to Variable
+        var drink_img = response.drinks[i].strDrinkThumb;
+        // Assign The Drink ID to Variable
+        var drink_id = response.drinks[i].idDrink;
+        // Call Function that creates the elements for the search results
+        search_results(drink_name, drink_img, drink_id);
+      }
     }
   })
 }

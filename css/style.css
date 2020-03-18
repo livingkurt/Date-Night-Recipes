@@ -163,6 +163,21 @@ head {
   border: 0px;
 }
 
+#no_results_2 {
+  text-align: center;
+  display: flex;
+  border-radius: 20px;
+  font-size: 30px !important;
+  color: white;
+  /* width: % !important; */
+  margin-top: 65px;
+  max-width: 300px;
+  justify-content: center;
+  padding: 20px;
+  background-color: #920415 !important;
+  border: 0px;
+}
+
 #no_results:hover {
   background-color: #a50518 !important;
 }
@@ -261,7 +276,7 @@ h4 {
     min-height: 20px !important;
   }
   .uk-width-large {
-    width: 250px;
+    width: 290px;
   }
   nav {
     height: 0px;
@@ -272,7 +287,7 @@ h4 {
   }
   h3 {
     font-size: 15px;
-    max-width: 350px !important;
+    max-width: 380px !important;
   }
   #search_i {
     font-size: 20px !important;
@@ -287,12 +302,16 @@ h4 {
     margin: 0px;
     height: 40px;
     margin-left: 5px;
-    /* height: 30px; */
   }
-  #no_results {
+  #no_results, #no_results_2 {
     font-size: 20px !important;
     margin-top: 0px !important;
     max-width: 350px;
+  }
+  #no_results_2 {
+    font-size: 20px !important;
+    margin-top: 0px !important;
+    max-width: 170px;
   }
   #search_results_row {
     display: flex;
@@ -312,24 +331,14 @@ h4 {
     width: 100%;
     margin-top: 15px;
   }
-  /* #no_results {
-        font-size: 25px;
-        width: 400px;
-    } */
 }
 
-/* margin: auto; width: 600px; */
-
-/** Tablet **/
-
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-  /* #no_results {
-        font-size: 55px;
-        width: 723px;
-    } */
+@media only screen and (min-width: 768px) {
+  #no_results, #no_results_2 {
+    font-size: 55px;
+    width: 723px;
+  }
 }
-
-/** Tablet (landscape) **/
 
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {}
 
@@ -339,44 +348,9 @@ h4 {
     justify-content: center;
   }
   #meal_recipe_d, #drink_recipe_d {
-    /* font-size: 14px; */
     width: 100%;
   }
   #drink_instuctions_container, #meal_instuctions_container {
-    /* font-size: 14px !important;
-    border-radius: 15px !important; */
     width: 100%;
-    /* margin-top: 15px; */
   }
-  /* #no_results {
-    font-size: 16px !important;
-    margin-top: 0px !important;
-  } */
-  /* #no_results { */
-  /* font-size: 30px; */
-  /* width: 723px; */
 }
-
-/* #search_i {
-    font-size: 40px;
-    width: 600px;
-  } */
-
-}
-
-/* @media screen and (max-width: 768px) {
-  #no_results {
-    font-size: 23px;
-    margin-top: 0px;
-  }
-  #search_results_row {
-    display: flex;
-    justify-content: center;
-  }
-  #meal_recipe_img {
-    margin: 0px;
-  }
-  #drink_recipe_img {
-    margin: 0px;
-  }
-} */
