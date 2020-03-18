@@ -165,10 +165,17 @@ function create_instructions(recipe, instructions_list_e, ) {
   for (var i = 0; i < instructions_len; i++) {
     // Create a list element
     var instructions_list_item_e = $("<li>");
-    // Add each instruction item to the li element
-    instructions_list_item_e.text(instructions_array[i] + ".")
-    // Place list element on ordered list element
-    instructions_list_e.append(instructions_list_item_e);
+    // If there their are empty instructions don't place them
+    if (instructions_array[i] === "") {
+      console.log(instructions_array[i])
+    }
+    else {
+      // Add each instruction item to the li element
+      instructions_list_item_e.text(instructions_array[i] + ".")
+      // Place list element on ordered list element
+      instructions_list_e.append(instructions_list_item_e);
+
+    }
 
   }
 }
