@@ -1,38 +1,45 @@
+// Assign Url to params variable
 var params = new URLSearchParams(window.location.search.slice(1));
+// If the params has a meal_id and a drink_id
 if (params.has("meal_id") && params.has("drink_id")) {
+  // Get the meal_id
   var meal_id = params.get("meal_id");
+  // Get the drink_id
   var drink_id = params.get("drink_id");
-  console.log(meal_id, drink_id);
 }
-console.log(meal_id)
-
+// if the meal_id is undefined
 if (meal_id === undefined) {
-  console.log("is null")
+  // Make the results container be hidden
   $("#results_container").attr("style", "display: none;")
+  // Create a button and assign it to a variable
   var no_results = $("<button>");
+  // Assign Element to variable
   var results_div = $("#results_results")
+  // Assign text to button
   no_results.text("No Recipes at this Time")
+  // Assign classes to the button
   no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline box")
+  // Assign an id to the button
   no_results.attr("id", "no_results")
+  // Place the button on the page
   results_div.append(no_results)
-
-
 }
-
+// When you click on the no results button
 $(no_results).on("click", function (event) {
+  // Prevent Default
   event.preventDefault();
+  // Redirect to the home page
   window.open("index.html", '_self');
-
 })
 
-
+// Data to be run through the api calls
 const api_calls = async () => {
   var m_route = "meals"
   var m_modifier = "meal"
   var m_name = "strMeal"
   var m_img = "strMealThumb"
   var m_search_query_url = "https://www.themealdb.com/api/json/v1/1/lookup.php?i=" + meal_id
-
+  // Run functions with meal specific data
   await get_results(m_route, m_name, m_img, m_search_query_url, m_modifier);
 
   var d_route = "drinks"
@@ -40,14 +47,16 @@ const api_calls = async () => {
   var d_name = "strDrink"
   var d_img = "strDrinkThumb"
   var d_search_query_url = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + drink_id
-
+  // Run functions with drink specific data
   await get_results(d_route, d_name, d_img, d_search_query_url, d_modifier);
 }
+// Start running script
 api_calls()
 
 function get_results(route, name, img, search_query_url, modifier) {
+  // Remove height from body
   $("body").css("height", "unset")
-
+  // Make call to api
   $.ajax({ url: search_query_url, method: "GET" }).then(function (response) {
     // Assign Base Response to a variable
     var recipe = response[route][0]
@@ -62,14 +71,17 @@ function get_results(route, name, img, search_query_url, modifier) {
     place_image(recipe, img, modifier)
     // Assign Element to Variable
     var ingredient_container_e = $("#" + modifier + "_ingredient_container");
+    // Assign style to Element
     ingredient_container_e.attr("style", "opacity: .9; width: 100%; border-radius: 20px;  font-weight: bold; color: black;")
     // Assign Element to Variable
     var ingredients_header_e = $("#" + modifier + "_ingredients_header");
     // Make the Label Bold
     ingredients_header_e.attr("style", "font-weight: bold; color: black;")
-    // Create a Unordered List
+    // Assign Element to variable
     var instructions_container_e = $("#" + modifier + "_instuctions_container")
+    // Assign classes to Element
     instructions_container_e.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
+    // Create a Unordered List
     var ingredient_list_e = $("<ul>");
     // Place Ingredients in Elements+
     place_ingredients(recipe, ingredient_list_e);
@@ -90,11 +102,8 @@ function get_results(route, name, img, search_query_url, modifier) {
     // Place Elements in Container
     ingredient_container_e.append(ingredients_header_e, ingredient_list_e);
     instructions_container_e.append(instructions_label_e, instructions_list_e, youtube_link_e)
-
-
   })
 }
-
 
 function place_image(recipe, img, modifier) {
   // Assign Img Response to Variable

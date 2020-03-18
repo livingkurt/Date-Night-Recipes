@@ -55,19 +55,21 @@ function category_m_api_call(meal_search) {
 function meal_api_call(meal_search_query_url) {
   // Ajax Request to search for meals in mealdb API
   $.ajax({ url: meal_search_query_url, method: "GET" }).then(function (response) {
-    // Get the length of the search
-
-    console.log(response)
+    // If the user typed in a word that does not recieve any results
     if (response.meals === null) {
-      console.log("is null")
+      // Creates a container div
       var no_results = $("<div>");
-      // var results_div = $("#search_results_row")
+      // Assigns text in the div
       no_results.text("No Results")
+      // Assigns it to classes
       no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
+      // Assigns it an id
       no_results.attr("id", "no_results_2")
+      // Places the div on the screen
       search_results_row_e.append(no_results)
     }
     else {
+      // Get the length of the search
       var array_len = response.meals.length;
       // Loop to get all of the information for the search results based on how many items there are
       for (var i = 0; i < array_len; i++) {
@@ -129,18 +131,22 @@ function drink_api_call(drink_search_query_url) {
   console.log(drink_search_query_url)
 
   $.ajax({ url: drink_search_query_url, method: "GET" }).then(function (response) {
-    // Get the length of the search
-    console.log(response)
+
+    // If the user typed in a word that does not recieve any results
     if (response.drinks === null) {
-      console.log("is null")
+      // Creates a container div
       var no_results = $("<div>");
-      // var results_div = $("#search_results_row")
+      // Assigns text in the div
       no_results.text("No Results")
+      // Assigns it to classes
       no_results.attr("class", "uk-card uk-card-default uk-card-body uk-inline")
+      // Assigns it an id
       no_results.attr("id", "no_results_2")
+      // Places the div on the screen
       search_results_row_e.append(no_results)
     }
     else {
+      // Get the length of the search
       var array_len = response.drinks.length;
       // Loop to get all of the information for the search results based on how many items there are
       for (var i = 0; i < array_len; i++) {
@@ -160,24 +166,29 @@ function drink_api_call(drink_search_query_url) {
 
 // Creates the elements and attributes them from the search results
 function search_results(name, img, id) {
-
-
-  var x = "Total Height: " + screen.height;
-  // console.log(x)
-  var body = document.body,
-    html = document.documentElement;
-
+  // Assign the body tag to a variable
+  var body = document.body
+  // Assign the html tag to a variable
+  var html = document.documentElement;
+  // Calculate the max height of the screen
   var height = Math.max(body.scrollHeight, body.offsetHeight, html.clientHeight, html.scrollHeight, html.offsetHeight);
-  console.log(height)
+  // If the screen height is greater than 1912
   if (height > 1912) {
+    // Remove the height attribute from body
     $("body").css("height", "unset")
   }
+  // If the screen height is less than 1912
   else if (height < 1912) {
+    // Assign attributes to background on body
     $("body").css("height: unset; background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;")
+    // Assign attributes to background on html
     $("html").css("height", "100%")
   }
+  // If the screen height is less than or equal 1912
   else if (height <= 1486) {
+    // Assign attributes to background on body
     $("body").css("height: unset; background: url(images/veggies.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: center; background-size: cover;")
+    // Assign attributes to background on html
     $("html").css("height", "100%")
   }
   // Creates a container div
@@ -227,10 +238,14 @@ $(document).on('click', '.results_container', function (event) {
     var final_meal_id = $(this).attr("id")
     // Open Drinks page and store id data inside of the url
     var url = 'drinks.html?meal_id=' + final_meal_id;
+    // Get the url and assign it to the params
     var params = new URLSearchParams(window.location.search.slice(1));
+    // if the url has a drink id
     if (params.has("drink_id")) {
+      // add it to the url
       url += "&drink_id=" + params.get("drink_id");
     }
+    // Open that url
     window.open(url, '_self');
   }
   // If you are on the drinks.html page
@@ -280,19 +295,28 @@ ready_b_e.on("click", function (event) {
 // Warning, major hack
 // Try and preserve the querystring for everylink that is clicked on
 $("a").on("click", function (event) {
+  // Prevent default for the a tag
   event.preventDefault();
+  // Get params from url
   var oldParams = new URLSearchParams(window.location.search.slice(1));
-
+  // Set the new params to what was clicked on in the dropdown
   var params = event.target.getAttribute("href").split("?");
+  // If the first params exists
   if (params[1]) {
+    // Get the new params at that first one
     var newParams = new URLSearchParams(params[1]);
+    // Loop through the params
     newParams.forEach(function (value, key) {
+      // If the value exists
       if (value) {
+        // Set the old params to the new params
         oldParams.set(key, value);
       }
+      // Set the old params to the new params
       oldParams.set(key, value)
     })
   }
+  // Assign the href to the old new params i think
   window.location.href = (params[0] + "?" + oldParams.toString())
 
 
