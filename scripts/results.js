@@ -60,7 +60,6 @@ function get_results(route, name, img, search_query_url, modifier) {
   $.ajax({ url: search_query_url, method: "GET" }).then(function (response) {
     // Assign Base Response to a variable
     var recipe = response[route][0]
-    console.log(recipe)
     // Assign Name to variable
     var recipe_name = recipe[name]
     // Place Name in Element
@@ -108,7 +107,6 @@ function get_results(route, name, img, search_query_url, modifier) {
 function place_image(recipe, img, modifier) {
   // Assign Img Response to Variable
   var img = recipe[img];
-  console.log(img)
   // Assign Element to Variable
   var recipe_img_e = $("#" + modifier + "_recipe_img");
   // Assign src to img
@@ -136,17 +134,24 @@ function place_ingredients(recipe, ingredient_list_e) {
     var measurements = recipe["strMeasure" + i]
     // Assign ingredients to variable
     var ingredients = recipe["strIngredient" + i]
+    console.log({ "measurements": measurements, "ingredients": ingredients })
     // If the ingredient shows up to be null
     if (measurements != null || ingredients != null) {
-      // Create List element
-      var ingredient_l_e = $("<li>");
-      // Set list item text to measurments and ingredients
-      ingredient_l_e.text(measurements + " " + ingredients)
-      // if the measurments is an empty string
-      if (measurements != "") {
-        // Place the list elements into unordered list elements
-        ingredient_list_e.append(ingredient_l_e);
+      if (measurements === " " || ingredients === " " || measurements === undefined || ingredients === undefined) {
+        console.log("No More Ingredients")
       }
+      else {
+        // Create List element
+        var ingredient_l_e = $("<li>");
+        // Set list item text to measurments and ingredients
+        ingredient_l_e.text(measurements + " " + ingredients)
+        // if the measurments is an empty string
+        if (measurements != "") {
+          // Place the list elements into unordered list elements
+          ingredient_list_e.append(ingredient_l_e);
+        }
+      }
+
     }
   }
 }
